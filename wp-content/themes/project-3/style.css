@@ -1,0 +1,70 @@
+/*
+Theme Name: Project 3
+Author: Polina, Zara, Denis, Denis
+Description: Website for project 3
+Version: 1.0
+*/
+
+/* Фон всей страницы */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #842222;
+}
+
+/* Панель навигации */
+.site-nav {
+  color: #f7ebcf;              /* бежевый текст/иконки */
+  border-radius: 28px;         /* большие скругления у самой панели */
+  padding: 3px 24px;          /* отступы внутри панели (даёт расстояние от краёв) */
+  /* если панель должна не тянуться на всю ширину окна: сними комментарий со строк ниже */
+  /* max-width: 1200px; margin: 12px auto; */
+}
+
+.site-nav__inner {
+  display: flex;
+  align-items: center;         /* лого и правые кнопки строго по одной линии */
+  justify-content: space-between;
+}
+
+/* ЛОГО — увеличиваем, чтобы не было маленьким */
+.site-nav__logo img {
+  display: block;
+  max-height: 82px;            /* подбери 56–72px как понравится */
+  width: auto;
+}
+
+/* ПРАВЫЙ БЛОК */
+.site-nav__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;                   /* расстояние между поиском и EN */
+  padding-right: 8px;          /* небольшой запас от правого края панели */
+}
+
+/* Кнопки-пиллы (прямоугольник со скруглениями за иконками) */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;                /* высота “таблетки” */
+  padding: 0 16px;             /* горизонтальные поля */
+  border-radius: 16px;         /* скруглённые углы (НЕ круг) */
+  background: #8b3230;         /* чуть светлее панели */
+  border: 2px solid rgba(255,255,255,.25);
+  color: #f7ebcf;              /* чтобы и текст, и SVG были бежевыми */
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Иконка лупы внутри пилла */
+.pill svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  /* важное: SVG должен быть со stroke="currentColor", тогда возьмёт цвет из .pill */
+}
+
+/* Текстовая пилла (EN) — немного шире для красоты */
+.pill--text { padding: 0 18px; font-size: 16px; }
