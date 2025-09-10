@@ -16,6 +16,16 @@ add_action('wp_enqueue_scripts', function () {
   );
 });
 
+add_action('wp_enqueue_scripts', function () {
+  wp_enqueue_style(
+    'font-titan-one',
+    'https://fonts.googleapis.com/css2?family=Titan+One&display=swap',
+    [],
+    null
+  );
+});
+
+
 
 
 

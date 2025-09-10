@@ -25,6 +25,45 @@
 })();
 </script>
 
+<script>
+(function(){
+  const track = document.getElementById('newsTrack');
+  const btn   = document.getElementById('newsMoreBtn');
+  if (!track || !btn) return;
+
+  let index = 0; // текущий слайд (страница)
+  function slideNext(){
+    const viewport = track.parentElement;             // .news__viewport
+    const cards = track.querySelectorAll('.news__card');
+    if (!cards.length) return;
+
+    const gapPx = parseInt(getComputedStyle(track).gap) || 0;
+    const isMobile = window.matchMedia('(max-width: 960px)').matches;
+
+    // ширина шага: ширина видимой области (2 карточки на десктопе, 1 на мобиле)
+    const step = viewport.clientWidth + gapPx;
+
+    // максимальное количество страниц (округляем вверх)
+    const totalWidth = track.scrollWidth;
+    const maxIndex = Math.ceil(totalWidth / step) - 1;
+
+    index = (index >= maxIndex) ? 0 : index + 1;
+
+    const offset = -index * step;
+    track.style.transform = `translateX(${offset}px)`;
+  }
+
+  btn.addEventListener('click', slideNext);
+
+  // При ресайзе возвращаем в начало (чтобы не «зависало» между страницами)
+  window.addEventListener('resize', () => {
+    index = 0;
+    track.style.transform = 'translateX(0)';
+  });
+})();
+</script>
+
+
 <?php wp_footer(); ?>
 </body>
 </html>

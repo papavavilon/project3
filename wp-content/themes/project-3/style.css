@@ -17,7 +17,7 @@ body {
 .site-nav {
   color: #FFF8D8;
 
-  margin-left: 32px;
+  margin-left: 39px;
   margin-right:64px;
 }
 
@@ -118,19 +118,49 @@ body {
 
 
 
+
+
+
+
+
+
 /* секция героя */
-/* === HERO (главный блок) === */
+
+/* Заголовок на всю ширину бежевого блока + Titan One */
+.hero__inner {
+  max-width: 100%;             /* даём титулу 100% ширины секции */
+}
+
+/* саму сетку ограничим, чтобы контент не растягивался на 100% */
+.hero__grid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* стиль заголовка */
+.hero__title {
+  font-family: 'Titan One', system-ui, -apple-system, Arial, sans-serif;
+  text-transform: uppercase;
+  white-space: nowrap;          /* не переносить строки: "GRANO FLAME" в одну линию */
+  text-align: center;
+  margin: 0 0 18px;
+  padding-bottom: 8px;
+
+  /* размер под «фуллскрин» внутри блока: растёт от ширины экрана */
+  font-size: clamp(64px, 12vw, 200px);
+  line-height: 0.9;
+  letter-spacing: 0.02em;       /* можно увеличить/уменьшить */
+  word-spacing: 0.32em;         /* немного раздвинем GRANO и FLAME */
+
+  color: #9d2b24;
+  border-bottom: 2px dotted #9d2b24; /* тонкий пунктир */
+}
+
 .hero {
-  background: #f3e9c9;
-  
+  background: #FFF8D8;
  margin-top: 30px;
   padding: 24px 24px 28px;
   box-shadow: 0 8px 24px rgba(0,0,0,.25);
-}
-
-.hero__inner {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 /* Заголовок на всю ширину, тонкий пунктир */
@@ -160,12 +190,15 @@ body {
   display: grid;
   grid-auto-rows: min-content;
   align-content: start;
-  gap: 12px;
+  gap: 8px;
 }
-.hero__side--left { align-self: end; }           /* «прилипает» к низу */
+.hero__side--left { 
+  align-self: end;
+ 
+ }           /* «прилипает» к низу */
 .hero__side--right { align-items: flex-start; justify-items: start; }
 
-.kid { width: 90px; height: auto; }
+.kid { width: 150px; height: auto; }
 
 .info__text { display: grid; gap: 6px; }
 .info__time, .info__addr { color: #a4312a; }
@@ -184,7 +217,7 @@ body {
   height: auto;
   display: block;
   border-radius: 28px;
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,.20));
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.243));
 }
 
 /* Круассан — без искажений, меньше телефона */
@@ -195,13 +228,13 @@ body {
   transform: translate(-50%, -50%);
   width: auto;
   height: auto;
-  max-width: 90%;
-  max-height: 60%;
+  max-width: 120%;
+  max-height: 100%;
   filter: drop-shadow(0 8px 16px rgba(0,0,0,.30));
 }
 
 /* Правый блок: иконка пекаря и абзац */
-.chef { width: 112px; height: auto; margin-bottom: 8px; }
+.chef { width: 180px; height: auto; margin-bottom: 8px; }
 
 .hero__desc {
   margin: 0;
@@ -221,4 +254,374 @@ body {
   .hero__center     { order: 1; transform: none; }
   .hero__side--right{ order: 2; }
   .hero__title      { font-size: clamp(40px, 12vw, 80px); }
+}
+
+
+
+
+
+
+
+
+
+/* ===== GREEN (простой вариант) ===== */
+.green {
+  color: #FFF8D8;
+  margin: 39px;
+ 
+}
+/* Заголовок слева, жирный */
+.green__title {
+  margin: 0 0 20px;
+  font-weight: 600;
+  font-size: clamp(18px, 2.6vw, 28px);
+  line-height: 1.2;
+  color: #f7ebcf;
+  text-align: left;
+}
+
+/* Узкий текст: меньший кегль + ограниченная ширина строки */
+.green__p {
+  font-size: clamp(12px, 1.5vw, 19px);
+  line-height: 1.55;
+  color: #fff8d8bb;
+  max-width: none;      
+}
+
+
+.green__btnwrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: #842222;    
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-decoration: none;
+  border: none;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,.25));
+}
+
+
+
+
+
+
+
+/* ===== OUR THEMES (простая версия) ===== */
+.themes {
+  margin: 24px;
+}
+
+.themes__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* слева текст, справа сетка */
+  gap: 32px;
+  align-items: start;
+}
+
+/* ЛЕВАЯ колонка */
+.themes__title {
+  margin: 0 0 14px;
+  font-weight: 800;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.15;
+  color: #f7ebcf;
+  text-align: left;
+}
+
+.themes__p {
+  margin: 0 0 14px;
+  font-size: clamp(16px, 1.7vw, 20px);
+  line-height: 1.6;
+  color: #e1c8bf;
+}
+/* ПРАВАЯ колонка — делаем её уже, чтобы карточки были поменьше */
+.themes__right {
+  justify-self: end;      /* прилипает вправо */
+  width: 100%;
+  max-width: 500px;       /* ← уменьши до 520/500, если хочешь ещё меньше карточки */
+}
+
+/* Сетка 2×3 */
+.themes__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.tile__img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(0,0,0,.15);
+}
+
+.tile__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tile__title {
+  margin: 8px 2px 0;
+  color: #f7ebcf;
+  font-weight: 700;
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+/* Мобилка: одна колонка */
+@media (max-width: 960px) {
+  .themes__inner { grid-template-columns: 1fr; }
+  .themes__right { max-width: none; }  /* пусть тянется на всю ширину на мобиле */
+  .themes__grid  { grid-template-columns: 1fr; }
+}
+/* Колонки одной высоты, чтобы было от чего центрировать */
+.themes__inner {
+  align-items: stretch;
+}
+
+/* Левая колонка: сетка с «прокладками» сверху/снизу для центрирования ТОЛЬКО абзацев */
+.themes__left {
+  display: grid;
+  grid-template-rows: auto 1fr auto auto 1fr; /* заголовок / spacer / p1 / p2 / spacer */
+  min-height: 100%;
+}
+
+/* Заголовок — всегда наверху */
+.themes__title {
+  grid-row: 1;
+  margin-bottom: 14px;
+}
+
+/* Абзацы — по центру колонки за счёт spacer-рядов */
+.themes__p:first-of-type {
+  grid-row: 3;               /* Текст 1 */
+}
+
+.themes__p:last-of-type {
+  grid-row: 4;               /* Текст 2 */
+  margin-top: 28px;          /* расстояние между текстами — подбери 24–40px */
+}
+
+/* На мобилке возвращаем обычный поток */
+@media (max-width: 960px) {
+  .themes__left {
+    display: block;
+  }
+  .themes__p:last-of-type {
+    margin-top: 18px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ===== LATEST NEWS ===== */
+.news { margin: 24px; }
+.news__inner { max-width: 1200px; margin: 0 auto; }
+.news__title {
+  margin: 0 0 16px;
+  color: #f7ebcf;
+  font-weight: 800;
+  font-size: clamp(26px, 3vw, 40px);
+}
+
+/* Никакого ручного скролла мышью — только кнопкой */
+.news__viewport { overflow: hidden; }
+.news__track {
+  display: flex;
+  gap: 32px;                 /* промежуток между карточками */
+  transform: translateX(0);  /* JS будет двигать трек */
+  transition: transform .35s ease;
+}
+
+/* 2 карточки в ряд на десктопе */
+.news__card {
+  flex: 0 0 calc(50% - 16px);
+  
+  border-radius: 12px;
+  padding: 0 0 16px;
+  color: inherit;
+}
+
+.news__img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  background: rgba(0,0,0,.15);
+}
+.news__img img { 
+  width: 100%; height: 100%; 
+  object-fit: cover;
+   display: block; 
+  }
+
+.news__heading { 
+  margin: 12px 12px 8px;
+   color: #f7ebcf; 
+   font-weight: 800; 
+   font-size: clamp(16px,1.8vw,22px); 
+  }
+.news__excerpt {
+   margin: 0 12px 12px; 
+   color: #e1c8bf;
+    font-size: clamp(14px,1.6vw,18px); 
+    line-height: 1.5; 
+  }
+.news__meta    { 
+  margin: 0 12px 6px;  
+  color: #d6b0a5; 
+  font-size: 14px;
+ }
+.news__tag     { 
+  margin: 0 12px;   
+   color: #3aa183; 
+   font-weight: 700; 
+   font-size: 15px;
+   }
+
+.news__more {display: flex;
+   justify-content: flex-end;
+    margin-top: 16px;
+   }
+.btn-pill {
+  height: 46px; 
+  padding: 0 20px;
+   border-radius: 999px;
+  background: #873330;
+   color: #fff;
+    border: none;
+  font-weight: 800;
+   letter-spacing: .04em; 
+   text-decoration: none;
+}
+/* без анимаций */
+.btn-pill:hover, .btn-pill:focus {
+   transform: none; 
+   filter: none; 
+   box-shadow: none; 
+  }
+
+/* Мобилка: по одной карточке */
+@media (max-width: 960px) {
+  .news__card { flex: 0 0 100%; }
+  .news__more { justify-content: center; }
+}
+
+
+
+
+
+/* ===== BLOG TEASER — full-bleed + выравнивание по верху картинки ===== */
+
+/* секция тянется на всю ширину окна (full-bleed) */
+.blogteaser{
+  background:#f3e9c9;
+  /* трюк для полной ширины внутри центрального контейнера темы */
+  margin: 0 calc(50% - 50vw);
+  padding: 32px;
+  border-radius: 0;        /* без скруглений по краям экрана */
+}
+
+/* сетка: 2 колонки; тайтл над ними, ниже — картинка слева и текст справа */
+.blogteaser__inner{
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;   /* слева шире */
+  gap: clamp(6px, 3vw, 16px);
+  align-items:start;
+}
+
+/* хитрость без правок HTML: заставим детей .blogteaser__left участвовать в сетке родителя */
+.blogteaser__left{ display: contents; }
+
+/* заголовок занимает строку 1 на обе колонки */
+.blogteaser__title{
+  grid-column: 1 / -1;
+  margin: 0 0 clamp(12px, 1.8vw, 20px);
+  font-weight: 800;
+  font-size: clamp(28px, 3.2vw, 44px);
+  color:#1b1b1b;
+}
+
+/* картинка — строка 2, левая колонка */
+.blogteaser__img{
+  grid-column: 1;
+  grid-row: 2;
+  width:100%;
+  overflow:hidden;
+  border-radius:12px;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
+}
+.blogteaser__img img{ width:100%; height:auto; display:block; object-fit:cover; }
+
+/* правая колонка — тоже строка 2, начинается строго на уровне картинки */
+.blogteaser__right{
+  grid-column: 2;
+  grid-row: 2;            /* ← ключевая строка: старт на уровне картинки */
+  align-self:start;
+}
+
+.blogteaser__subtitle{
+  margin:0 0 10px;
+  font-weight:800;
+  font-size: clamp(20px, 2.2vw, 28px);
+  color:#2b2b2b;
+}
+.blogteaser__p{
+  margin:0 0 16px;
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height:1.6;
+  color:#3b3b3b;
+}
+
+/* кнопка — на всю ширину строки ниже контента, по центру */
+.blogteaser__cta{
+  grid-column: 1 / -1;
+  display:flex;
+  justify-content:center;
+  margin-top: 16px;
+}
+.btn-pill{
+  display:inline-flex; 
+  align-items:center;
+   justify-content:center;
+  height:54px; 
+  padding:0 28px;
+   border-radius:999px;
+  background:#873330; 
+  color:#fff; 
+  border:none;
+   font-weight:800; 
+   letter-spacing:.04em;
+}
+.btn-pill:hover, .btn-pill:focus{ 
+  transform:none;
+   filter:none;
+    box-shadow:none;
+   }
+
+/* мобилка: одна колонка */
+@media (max-width: 900px){
+  .blogteaser__inner{ grid-template-columns:1fr; }
+  .blogteaser__right{ grid-column:1; grid-row:auto; } /* обычный поток */
 }
