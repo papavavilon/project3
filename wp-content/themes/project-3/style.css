@@ -16,7 +16,7 @@ body {
 /* панель */
 .site-nav {
   color: #FFF8D8;
-  padding: px 32px;
+
   margin-left: 32px;
   margin-right:64px;
 }
@@ -113,4 +113,112 @@ body {
   color: #f7ebcf;
   font-weight: 700;
   cursor: pointer;
+}
+
+
+
+
+/* секция героя */
+/* === HERO (главный блок) === */
+.hero {
+  background: #f3e9c9;
+  
+ margin-top: 30px;
+  padding: 24px 24px 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+.hero__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Заголовок на всю ширину, тонкий пунктир */
+.hero__title {
+  margin: 0 0 18px;
+  text-align: center;
+  font-size: clamp(48px, 9vw, 120px);
+  font-weight: 900;
+  color: #9d2b24;
+  line-height: 0.9;
+  letter-spacing: 1px;
+  border-bottom: 2px dotted #9d2b24;
+  padding-bottom: 8px;
+}
+
+/* 3-колоночная сетка: слева / центр / справа.
+   Правую делаем шире, чтобы текст был «широкий и низкий». */
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.2fr minmax(200px, 300px) 1.8fr;
+  gap: 28px 36px;
+  align-items: center;
+}
+
+/* Сайд-блоки */
+.hero__side {
+  display: grid;
+  grid-auto-rows: min-content;
+  align-content: start;
+  gap: 12px;
+}
+.hero__side--left { align-self: end; }           /* «прилипает» к низу */
+.hero__side--right { align-items: flex-start; justify-items: start; }
+
+.kid { width: 90px; height: auto; }
+
+.info__text { display: grid; gap: 6px; }
+.info__time, .info__addr { color: #a4312a; }
+.info__time { font-weight: 700; }
+
+/* Центр: телефон чуть влево и строго по центру по вертикали */
+.hero__center { display: grid; place-items: center; transform: translateX(-4%); }
+
+.phone-wrap {
+  position: relative;
+  width: clamp(150px, 24vw, 250px); /* размер телефона (маленький и аккуратный) */
+}
+
+.phone {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 28px;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,.20));
+}
+
+/* Круассан — без искажений, меньше телефона */
+.croissant {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 60%;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,.30));
+}
+
+/* Правый блок: иконка пекаря и абзац */
+.chef { width: 112px; height: auto; margin-bottom: 8px; }
+
+.hero__desc {
+  margin: 0;
+  max-width: 720px;     /* шире полоса текста */
+  font-size: 20px;
+  line-height: 1.5;     /* ниже по высоте строк */
+  color: #7b2b26;
+}
+
+/* === Адаптив === */
+@media (max-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .hero__side--left { align-self: start; order: 3; }
+  .hero__center     { order: 1; transform: none; }
+  .hero__side--right{ order: 2; }
+  .hero__title      { font-size: clamp(40px, 12vw, 80px); }
 }
