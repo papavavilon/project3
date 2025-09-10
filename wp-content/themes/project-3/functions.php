@@ -6,4 +6,16 @@ add_action('wp_enqueue_scripts', function () {
         [],
         filemtime( get_stylesheet_directory() . '/style.css' ) // анти-кэш
     );
+    $path = get_stylesheet_directory() . '/assets/js/search-modal.js';
+  wp_enqueue_script(
+    'site-search-modal',
+    get_stylesheet_directory_uri() . '/assets/js/search-modal.js',
+    [],
+    file_exists($path) ? filemtime($path) : null,
+    true // в футере
+  );
 });
+
+
+
+
