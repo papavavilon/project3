@@ -25,7 +25,7 @@ $hero_address = get_field('hero_address', $home_id);
       <?php endif; ?>
 
       <div class="hero__grid">
-        <!-- ЛЕВО: иконка + 2 строки, прилипает к низу -->
+       
         <aside class="hero__side hero__side--left">
           <?php if (!empty($icon_left['ID'])): ?>
             <?php echo wp_get_attachment_image($icon_left['ID'], 'medium', false, ['class'=>'kid']); ?>
@@ -36,7 +36,7 @@ $hero_address = get_field('hero_address', $home_id);
           </div>
         </aside>
 
-        <!-- ЦЕНТР: телефон + круассан, строго по центру -->
+      
         <div class="hero__center">
           <div class="phone-wrap">
             <?php if (!empty($hero_phone['ID'])): ?>
@@ -49,7 +49,7 @@ $hero_address = get_field('hero_address', $home_id);
           </div>
         </div>
 
-        <!-- ПРАВО: пекарь + абзац -->
+        
         <aside class="hero__side hero__side--right">
           <?php if (!empty($icon_right['ID'])): ?>
             <?php echo wp_get_attachment_image($icon_right['ID'], 'medium', false, ['class'=>'chef']); ?>
@@ -67,7 +67,7 @@ $hero_address = get_field('hero_address', $home_id);
 
 
 <?php
-// данные из ACF
+
 $home_id   = get_queried_object_id();
 $g_title   = get_field('green_title', $home_id);
 $g_txt1    = get_field('green_text1', $home_id);
@@ -102,38 +102,38 @@ $g_btn_url = get_field('green_button_link',  $home_id);
 
 
 <?php
-// ЛЕВАЯ колонка: берём поля со страницы Home
+
 $home_id  = get_queried_object_id();
 $t_title  = get_field('themes_title', $home_id);
 $t_p1     = get_field('themes_text1', $home_id);
 $t_p2     = get_field('themes_text2', $home_id);
 
-// ПРАВАЯ колонка: 6 записей из твоего Post Type (замени 'theme_tile' на твой slug, если другой)
+
 $tiles = get_posts([
   'post_type'      => 'theme_tile',
   'posts_per_page' => 6,
-  'orderby'        => 'date', // хочешь ручной порядок — сделай 'menu_order' и заполняй Order
+  'orderby'        => 'date', 
   'order'          => 'ASC',
 ]);
 ?>
 
 <section class="themes">
   <div class="themes__inner">
-    <!-- ЛЕВАЯ колонка: заголовок + 2 абзаца -->
+    
     <div class="themes__left">
       <h2 class="themes__title"><?php echo esc_html($t_title); ?></h2>
       <p class="themes__p"><?php echo nl2br(esc_html($t_p1)); ?></p>
       <p class="themes__p"><?php echo nl2br(esc_html($t_p2)); ?></p>
     </div>
 
-    <!-- ПРАВАЯ колонка: сетка 2×3 -->
+    
     <div class="themes__right">
       <div class="themes__grid">
         <?php foreach ($tiles as $post): setup_postdata($post); ?>
           <?php
             $id   = $post->ID;
-            $img  = get_field('tile_image', $id); // ACF Image (array)
-            $text = get_field('tile_text',  $id); // ACF Text
+            $img  = get_field('tile_image', $id); 
+            $text = get_field('tile_text',  $id); 
           ?>
           <article class="tile">
             <div class="tile__img">
@@ -153,13 +153,13 @@ $tiles = get_posts([
 
 
 <?php
-// ===== Latest news (заголовок с Home + карточки из CPT) =====
+// ===== Latest news  =====
 $home_id    = (int) get_option('page_on_front') ?: get_queried_object_id();
 $news_title = function_exists('get_field') ? get_field('news_section_title', $home_id) : '';
 $news_title = $news_title ?: 'Latest news';
 
 $news = get_posts([
-  'post_type'      => 'news_item',   // ← замени на свой slug, если другой
+  'post_type'      => 'news_item',   
   'posts_per_page' => -1,
   'orderby'        => 'date',
   'order'          => 'DESC',
@@ -170,13 +170,13 @@ $news = get_posts([
   <div class="news__inner">
     <h2 class="news__title"><?php echo esc_html($news_title); ?></h2>
 
-    <!-- Видимая область (не скроллится мышкой) -->
+    
     <div class="news__viewport" id="newsViewport">
       <div class="news__track" id="newsTrack">
         <?php foreach ($news as $post): setup_postdata($post); ?>
           <?php
             $id       = $post->ID;
-            $img      = get_field('news_image', $id);      // Image (array)
+            $img      = get_field('news_image', $id);      
             $heading  = (string) get_field('news_heading', $id);
             $excerpt  = (string) get_field('news_excerpt', $id);
             $date_raw = (string) get_field('news_date', $id);
@@ -205,11 +205,11 @@ $news = get_posts([
 
 
 <?php
-// ===== Blog teaser (из ACF на Home) =====
+// ===== Blog teaser =====
 $home_id = (int) get_option('page_on_front') ?: get_queried_object_id();
 
 $title     = get_field('blog_teaser_title',   $home_id);
-$image     = get_field('blog_teaser_image',   $home_id);   // array
+$image     = get_field('blog_teaser_image',   $home_id);   
 $subtitle  = get_field('blog_teaser_subtitle',$home_id);
 $text1     = get_field('blog_teaser_text1',   $home_id);
 $text2     = get_field('blog_teaser_text2',   $home_id);
@@ -260,11 +260,11 @@ $btn_link  = get_field('blog_teaser_button_link',  $home_id);
 
 
 <?php
-// ===== Partners block (ACF на Home) =====
+// ===== Partners block  =====
 $home_id  = (int) get_option('page_on_front') ?: get_queried_object_id();
 
 $p_title  = get_field('partners_title',  $home_id);
-$p_image  = get_field('partners_image',  $home_id);   // array
+$p_image  = get_field('partners_image',  $home_id);   
 $p_cap    = get_field('partners_caption',$home_id);
 ?>
 
@@ -291,16 +291,15 @@ $p_cap    = get_field('partners_caption',$home_id);
 
 
 <?php
-// ===== Support & Contacts (ACF на Home) =====
+// ===== Support & Contacts =====
 $home_id = (int) get_option('page_on_front') ?: get_queried_object_id();
 
-// ЛЕВАЯ колонка
+
 $s_title    = get_field('support_title',    $home_id);
 $s_subtitle = get_field('support_subtitle', $home_id);
 $s_txt1     = get_field('support_text1',    $home_id);
 $s_txt2     = get_field('support_text2',    $home_id);
 
-// ПРАВАЯ колонка
 $c_addr   = get_field('contact_address', $home_id);
 $c_email  = get_field('contact_email',  $home_id);
 $c_txt1   = get_field('contact_text1',  $home_id);
@@ -310,7 +309,7 @@ $c_txt2   = get_field('contact_text2',  $home_id);
 <section class="support">
   <div class="support__inner">
 
-    <!-- Левая колонка -->
+   
     <div class="support__left">
       <div class="support__box">
         <?php if ($s_title): ?>
@@ -331,7 +330,7 @@ $c_txt2   = get_field('contact_text2',  $home_id);
       </div>
     </div>
 
-    <!-- Правая колонка -->
+   
     <div class="support__right">
       <?php if ($c_addr): ?>
         <address class="support__addr"><?php echo nl2br(esc_html($c_addr)); ?></address>
