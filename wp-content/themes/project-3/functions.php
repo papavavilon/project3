@@ -8,3 +8,14 @@ add_action('wp_enqueue_scripts', function () {
     );
 });
 
+
+
+add_action('wp_enqueue_scripts', function () {
+  // Google Fonts: Titan One
+  wp_enqueue_style(
+    'gf-titan-one',
+    'https://fonts.googleapis.com/css2?family=Titan+One&display=swap',
+    [],
+    null
+  );
+});
