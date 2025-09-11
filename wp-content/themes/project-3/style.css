@@ -625,3 +625,74 @@ body {
   .blogteaser__inner{ grid-template-columns:1fr; }
   .blogteaser__right{ grid-column:1; grid-row:auto; } /* обычный поток */
 }
+
+
+
+
+
+
+/* ===== PARTNERS (full-bleed, без растягивания картинки) ===== */
+
+/* Секция тянется на всю ширину окна */
+.partners {
+  margin: 0 calc(50% - 50vw);            /* full-bleed по горизонтали */
+  padding-top: 120px;       /* внутренние отступы секции */
+}
+
+/* Внутренний контейнер без ограничения ширины */
+.partners__inner {
+  max-width: none;
+}
+
+/* Рамка с картинкой — по центру, поверх неё будет заголовок */
+.partners__frame {
+  position: relative;
+  margin: 0 auto;                        /* центрируем рамку */            /* синий кант */
+  background: #ffffff;
+  display: flex;
+  justify-content: center;               /* центрируем картинку по горизонтали */
+  align-items: flex-start;
+  overflow: visible;                     /* ничего не обрезаем */
+}
+
+/* КАРТИНКА:
+   - не растягиваем больше исходника
+   - не искажаем пропорции
+   - на мобильных уменьшается до 100% ширины окна */
+.partners__frame img {
+  display: block;
+  width: auto;                           /* сохраняем натуральную ширину */
+  height: auto;                          /* сохраняем пропорции */
+  max-width: 100vw;                      /* на узких экранах — ужимаем до ширины окна */
+  max-height: 80vh;                      /* защита от чрезмерной высоты (по желанию) */
+}
+
+/* Заголовок в левом верхнем углу поверх картинки */
+.partners__title {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(20px, 2.6vw, 28px);
+  color: #8c2a2a;                        /* бордовый */
+  /* Если фон картинки пёстрый, можно включить подложку:
+     background: rgba(255,255,255,.85);
+     padding: 6px 10px;
+     border-radius: 6px; */
+}
+
+/* Подпись под картинкой */
+.partners__caption {
+  text-align: right;
+  margin-right: 70px;
+  font-size: clamp(16px, 1.6vw, 20px);
+  color: #f7ebcf;                        /* светлая, как в макете */
+}
+
+/* Небольшой твик для совсем маленьких экранов */
+@media (max-width: 560px) {
+  .partners { padding: 14px; }
+  .partners__frame { border-width: 3px; border-radius: 6px; }
+  .partners__title { top: 12px; left: 12px; }
+}

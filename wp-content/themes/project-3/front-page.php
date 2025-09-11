@@ -255,6 +255,35 @@ $btn_link  = get_field('blog_teaser_button_link',  $home_id);
 
 
 
+<?php
+// ===== Partners block (ACF на Home) =====
+$home_id  = (int) get_option('page_on_front') ?: get_queried_object_id();
+
+$p_title  = get_field('partners_title',  $home_id);
+$p_image  = get_field('partners_image',  $home_id);   // array
+$p_cap    = get_field('partners_caption',$home_id);
+?>
+
+<section class="partners">
+  <div class="partners__inner">
+
+    <div class="partners__frame">
+      <?php if (!empty($p_image['ID'])): ?>
+        <?php echo wp_get_attachment_image($p_image['ID'], 'full', false, ['loading'=>'lazy']); ?>
+      <?php endif; ?>
+      <?php if ($p_title): ?>
+        <div class="partners__title"><?php echo esc_html($p_title); ?></div>
+      <?php endif; ?>
+    </div>
+
+    <?php if ($p_cap): ?>
+      <p class="partners__caption">
+        <?php echo esc_html($p_cap); ?>
+      </p>
+    <?php endif; ?>
+
+  </div>
+</section>
 
 
 
