@@ -1,0 +1,460 @@
+/*
+Theme Name: Project 3
+Author: Polina, Zara, Denis, Denis
+Description: Website for project 3
+Version: 1.0
+*/
+
+/* Фон всей страницы */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #842222;
+}
+
+/* Панель навигации */
+.site-nav {
+  color: #f7ebcf;              /* бежевый текст/иконки */
+  border-radius: 28px;         /* большие скругления у самой панели */
+  padding: 3px 24px;          /* отступы внутри панели (даёт расстояние от краёв) */
+  /* если панель должна не тянуться на всю ширину окна: сними комментарий со строк ниже */
+  /* max-width: 1200px; margin: 12px auto; */
+}
+
+.site-nav__inner {
+  display: flex;
+  align-items: center;         /* лого и правые кнопки строго по одной линии */
+  justify-content: space-between;
+}
+
+/* ЛОГО — увеличиваем, чтобы не было маленьким */
+.site-nav__logo img {
+  display: block;
+  max-height: 82px;            /* подбери 56–72px как понравится */
+  width: auto;
+}
+
+/* ПРАВЫЙ БЛОК */
+.site-nav__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;                   /* расстояние между поиском и EN */
+  padding-right: 8px;          /* небольшой запас от правого края панели */
+}
+
+/* Кнопки-пиллы (прямоугольник со скруглениями за иконками) */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;                /* высота “таблетки” */
+  padding: 0 16px;             /* горизонтальные поля */
+  border-radius: 16px;         /* скруглённые углы (НЕ круг) */
+  background: #8b3230;         /* чуть светлее панели */
+  border: 2px solid rgba(255,255,255,.25);
+  color: #f7ebcf;              /* чтобы и текст, и SVG были бежевыми */
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Иконка лупы внутри пилла */
+.pill svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  /* важное: SVG должен быть со stroke="currentColor", тогда возьмёт цвет из .pill */
+}
+
+/* Текстовая пилла (EN) — немного шире для красоты */
+.pill--text { padding: 0 18px; font-size: 16px; }
+
+/* ================================
+   SDG 2 Custom Page Styles
+   ================================ */
+
+   .sdg2-wrapper {
+    background: #4b0f0f; /* dark red page background */
+    padding: 40px 0;
+  }
+  
+  .sdg2-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #7c2d2d; /* lighter red card background */
+    padding: 30px;
+    border-radius: 20px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Top bar */
+  .sdg2-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .sdg2-topbar button {
+    background: #b33;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .sdg2-topbar input[type="search"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+  }
+  
+  .sdg2-topbar select {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  /* Subtitle text */
+  .sdg2-card p.subtitle {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 10px;
+  }
+  
+  /* Hero image */
+  .sdg2-card img.hero {
+    width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+  }
+  
+  /* Title */
+  .sdg2-card h2 {
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+  /* Highlight box */
+  .sdg2-highlight {
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+  }
+  
+  /* Footer info */
+  .sdg2-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .sdg2-footer a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .sdg2-footer div {
+    margin: 10px 0;
+  }
+  /* ===== Extra styles only for the SDG 2 page ===== */
+
+.page-id-57 .sdg2-wrapper {
+  background: #4b0f0f;
+  padding: 40px 0;
+}
+
+.page-id-57 .entry-header,
+.page-id-57 .page-title,
+.page-id-57 .wp-block-post-title {
+  display: none !important;
+}
+
+@media (max-width: 720px) {
+  .page-id-57 .sdg2-card { 
+    padding: 20px; 
+    border-radius: 16px; 
+  }
+  .page-id-57 .sdg2-footer { 
+    flex-direction: column; 
+    gap: 10px; 
+  }
+}
+/* SDG page background + spacing */
+.page-id-57 .sdg2-wrapper { background:#4b0f0f; padding:40px 0; }
+
+/* Hide any theme/editor page title on SDG page */
+.page-id-57 .entry-header,
+.page-id-57 .page-title,
+.page-id-57 .wp-block-post-title,
+.page-id-57 h1.entry-title,
+.page-id-57 header.page-header,
+.page-id-57 .sdg2-card > h2.wp-title { display:none !important; }
+/* Make navbar background light red */
+.site-nav {
+  background-color: #7c2d2d !important;
+}
+
+/* Make SDG2 background also light red */
+.page-id-57 .sdg2-wrapper {
+  background: #7c2d2d !important;
+}
+/* ====== Base Page Background ====== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #4b0f0f; /* dark red background */
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* ====== Wrapper (light red container) ====== */
+.sdg2-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #7c2d2d; /* light red container */
+  border-radius: 20px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* ====== Top bar inside the container ====== */
+.sdg2-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sdg2-topbar button {
+  background: #b33;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sdg2-topbar .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.sdg2-topbar input[type="search"] {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.sdg2-topbar select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* ====== Hero Image ====== */
+.sdg2-hero {
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* ====== Titles ====== */
+.sdg2-wrapper h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.sdg2-wrapper p {
+  margin-bottom: 15px;
+  color: #eee;
+}
+
+/* ====== Highlight box (white section) ====== */
+.sdg2-highlight {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+/* ====== Footer Info ====== */
+.sdg2-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sdg2-footer div {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.sdg2-footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+/* Make the light-red card clip perfectly to its rounded corners */
+.sdg2-card{
+  overflow: hidden; /* prevents inner elements from poking outside the curve */
+}
+
+/* Proper top bar layout */
+.sdg2-topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom: 12px;          /* space before the subtitle */
+}
+
+/* Round red badges exactly like the mockup */
+.sdg2-badge{
+  -webkit-appearance:none;
+  appearance:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.25);
+  background:#c3423a;           /* red badge */
+  color:#fff;
+  font-weight:800;
+  font-size:22px;               /* ✕ / 🔍 size */
+  line-height:1;
+  padding:0;
+  cursor:pointer;
+}
+
+/* Badge that shows "EN" + tiny caret */
+.sdg2-badge--label{
+  font-size:20px;               /* fits 'EN' */
+  position:relative;
+  padding-right:18px;           /* room for caret */
+}
+
+/* Small white caret triangle */
+.sdg2-caret{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  width:0;
+  height:0;
+  border-left:6px solid transparent;
+  border-right:6px solid transparent;
+  border-top:8px solid #fff;    /* white little triangle */
+}
+
+/* Keep the action badges aligned and spaced */
+.sdg2-actions{
+  display:inline-flex;
+  align-items:center;
+  gap:16px;
+}
+
+/* Subtitle should clearly sit below the top bar */
+.sdg2-subtitle{
+  display:block;
+  margin:6px 4px 10px;          /* top spacing so it doesn’t collide with badges */
+  font-size:14px;
+  color:#f0dcd2;
+}
+
+/* Optional: ensure the red badge icons don't shrink on narrow widths */
+@media (max-width:480px){
+  .sdg2-badge{ width:48px; height:48px; font-size:20px; }
+  .sdg2-badge--label{ font-size:18px; }
+}
+:root{
+  --sdg-dark:#4b0f0f;
+  --sdg-card:#7c2d2d;
+  --sdg-badge:#c3423a;
+  --sdg-badge-b:#ffffff40;
+  --sdg-beige:#fff7ef;
+  --sdg-beige-b:#eadacc;
+  --sdg-text:#ffffff;
+}
+
+html,body{margin:0;padding:0;height:100%}
+*,*::before,*::after{box-sizing:border-box}
+
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,Helvetica,sans-serif;
+  background:var(--sdg-dark);
+  color:var(--sdg-text);
+  line-height:1.66;
+}
+
+.sdg2-page{padding:56px 0 72px;}
+.sdg2-card{
+  max-width:980px;margin:0 auto;background:var(--sdg-card);color:var(--sdg-text);
+  border-radius:34px;padding:28px;box-shadow:0 1px 0 rgba(255,255,255,.06) inset;overflow:hidden;
+}
+
+/* Top bar */
+.sdg2-topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.sdg2-badge{
+  -webkit-appearance:none;appearance:none;display:inline-flex;align-items:center;justify-content:center;
+  width:56px;height:56px;border-radius:50%;border:2px solid var(--sdg-badge-b);background:var(--sdg-badge);
+  color:#fff;font-weight:800;font-size:22px;line-height:1;padding:0;cursor:pointer;
+}
+.sdg2-actions{display:inline-flex;align-items:center;gap:16px}
+
+/* Language button fixed */
+.sdg2-lang{display:flex;align-items:center;gap:6px}
+.sdg2-lang-btn{font-size:18px;font-weight:700;justify-content:center}
+.sdg2-caret{width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid #fff}
+
+/* subtitle */
+.sdg2-subtitle{font-size:14px;color:#f0dcd2;margin:6px 4px 10px}
+
+/* hero */
+.sdg2-hero{display:block;width:100%;border-radius:8px;margin:8px 0 18px;height:auto}
+
+/* content */
+.sdg2-title{font-size:28px;font-weight:800;letter-spacing:.2px;margin:22px 0 12px}
+.sdg2-body p{margin:0 0 18px;color:#ffe8e0}
+
+/* inset (smaller, centered) */
+.sdg2-inset{
+  background:var(--sdg-beige);color:#222;border:2px solid var(--sdg-beige-b);
+  border-radius:12px;padding:18px 20px;margin:28px auto;box-shadow:0 2px 8px rgba(0,0,0,.08);
+  max-width:610px;width:100%;
+}
+
+/* footer two columns */
+.sdg2-info{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
+.sdg2-info a{color:#fff;text-decoration:underline}
+
+@media (max-width:900px){
+  .sdg2-card{border-radius:26px;padding:22px}
+  .sdg2-title{font-size:24px}
+  .sdg2-info{grid-template-columns:1fr;gap:18px}
+  .sdg2-badge{width:48px;height:48px;font-size:20px}
+  .sdg2-lang-btn{font-size:18px}
+  .sdg2-inset{max-width:100%}
+}
+
+/* hide theme header titles if they leak in */
+.wp-site-blocks .wp-block-post-title, .entry-header, .page-title, h1.entry-title {display:none!important}
