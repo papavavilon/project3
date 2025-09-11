@@ -986,3 +986,104 @@ html,body{
     .footer{grid-template-columns:1fr}
     }
 
+
+/* ===== Photo Text Card (full CSS, expanded) ===== */
+
+.pcard {
+  margin: 22px 0 34px;
+  --overlap: 26px;
+  --radius: 18px;
+  --card-radius: 20px;
+  --shadow-img: 0 24px 48px rgba(0, 0, 0, .35);
+  --shadow-card: 0 18px 28px rgba(0, 0, 0, .35);
+  --card-bg: rgba(0, 0, 0, .18);
+  --title-color: #f7ebcf;
+  --text-color: #f0d9cf;
+}
+
+.pcard__wrap {
+  width: min(1200px, 94vw);
+  margin: 0 auto;
+  position: relative;
+  padding: 6px;
+}
+
+.pcard__image {
+  position: relative;
+  z-index: 1;
+}
+
+.pcard__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-img);
+  object-fit: cover;
+}
+
+.pcard__card {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: calc(-1 * var(--overlap)) auto 0;
+  background: var(--card-bg);
+  backdrop-filter: blur(2px);
+  border-radius: var(--card-radius);
+  padding: clamp(14px, 2.2vw, 22px);
+  color: #fff8d8bb;
+  box-shadow: var(--shadow-card);
+}
+
+.pcard__title {
+  margin: 0 0 10px;
+  font-weight: 800;
+  font-size: clamp(18px, 2.2vw, 28px);
+  color: #FFF8D8;
+}
+
+.pcard__text {
+  line-height: 1.7;
+}
+
+.pcard__text p {
+  margin: 0 0 10px;
+}
+
+.pcard__text ul {
+  margin: 8px 0 10px 20px;
+}
+
+.pcard__text li + li {
+  margin-top: 6px;
+}
+
+/* back button */
+.pcard__back {
+  position: absolute;
+  top: clamp(10px, 2.2vw, 18px);
+  left: clamp(10px, 2.2vw, 18px);
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: #ffe9cf;
+  text-decoration: none;
+}
+
+.pcard__back svg {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .35));
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .pcard {
+    --overlap: 0px;
+  }
+  .pcard__card {
+    margin: 12px auto 0;
+  }
+}
