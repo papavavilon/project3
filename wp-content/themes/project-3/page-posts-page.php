@@ -11,19 +11,15 @@ get_header();
 <?php
 $page_id = get_queried_object_id();
 
+
 $chip1 = trim((string) get_field('chip1_text', $page_id));
 $chip2 = trim((string) get_field('chip2_text', $page_id));
 
 if ($chip1 || $chip2): ?>
   <section class="chips">
     <div class="chips__wrap">
-      <?php if ($chip1): ?>
-        <span class="chip chip--accent"><?php echo esc_html($chip1); ?></span>
-      <?php endif; ?>
-
-      <?php if ($chip2): ?>
-        <span class="chip"><?php echo esc_html($chip2); ?></span>
-      <?php endif; ?>
+      <?php if ($chip1): ?><span class="chip chip--accent"><?php echo esc_html($chip1); ?></span><?php endif; ?>
+      <?php if ($chip2): ?><span class="chip"><?php echo esc_html($chip2); ?></span><?php endif; ?>
     </div>
   </section>
 <?php endif; ?>
@@ -31,7 +27,7 @@ if ($chip1 || $chip2): ?>
 <hr class="divider">
 
 <?php
-// один запрос CPT (замени 'menu_item', если в CPT UI другой slug)
+
 $items = get_posts([
   'post_type'        => 'menu_item',
   'numberposts'      => 6,
@@ -43,9 +39,16 @@ $items = get_posts([
 
 $group1 = array_slice($items, 0, 3);
 $group2 = array_slice($items, 3, 3);
+
+
+function menu_item_url($post_id){
+  $url = trim((string) get_field('item_link', $post_id));
+  if ($url === '') { $url = get_permalink($post_id); }
+  return $url;
+}
 ?>
 
-<!-- СЕКЦИЯ 1 -->
+<!-- ===== СЕКЦИЯ 1: Croissants ===== -->
 <section class="menu-section">
   <h2 class="menu-title">
     <?php echo esc_html( (string) get_field('section_title_croissants', $page_id) ?: 'Savory Croissants 🥐' ); ?>
@@ -53,25 +56,27 @@ $group2 = array_slice($items, 3, 3);
 
   <div class="menu-grid">
     <?php foreach ($group1 as $post): setup_postdata($post);
-      $image  = get_field('item_image',  $post->ID);
-      $title  = trim((string) get_field('item_heading', $post->ID));
-      $text   = (string) get_field('item_desc',   $post->ID);
-      $weight = (string) get_field('item_weight', $post->ID);
-      if ($title === '') { $title = get_the_title($post); }
-      $plink  = get_permalink($post);
+      $img    = get_field('item_image',       $post->ID);        // image array
+      $label  = trim((string) get_field('item_label',      $post->ID)) ?: get_the_title($post);
+      $text   = (string)   get_field('item_label_text',    $post->ID);
+      $weight = (string)   get_field('item_weight',        $post->ID);
+      $url    = menu_item_url($post->ID);
     ?>
       <article class="mcard">
-        <?php if (!empty($image['ID'])): ?>
-          <a class="mcard__thumb" href="<?php echo esc_url($plink); ?>" aria-label="<?php echo esc_attr($title); ?>">
+        <?php if (!empty($img['ID'])): ?>
+          <a class="mcard__thumb" href="<?php echo esc_url($url); ?>" aria-label="<?php echo esc_attr($label); ?>">
             <div class="mcard__pic">
-              <?php echo wp_get_attachment_image($image['ID'], 'large', false, ['loading'=>'lazy']); ?>
+              <?php
+                
+                echo wp_get_attachment_image($img['ID'], 'mcard', false, ['loading'=>'lazy']);
+              ?>
             </div>
           </a>
         <?php endif; ?>
 
-        <?php if ($title): ?>
+        <?php if ($label): ?>
           <h3 class="mcard__title">
-            <a href="<?php echo esc_url($plink); ?>"><?php echo esc_html($title); ?></a>
+            <a href="<?php echo esc_url($url); ?>"><?php echo esc_html($label); ?></a>
           </h3>
         <?php endif; ?>
 
@@ -87,7 +92,7 @@ $group2 = array_slice($items, 3, 3);
   </div>
 </section>
 
-<!-- СЕКЦИЯ 2 -->
+<!-- ===== СЕКЦИЯ 2: Coffee ===== -->
 <section class="menu-section">
   <h2 class="menu-title">
     <?php echo esc_html( (string) get_field('section_title_coffee', $page_id) ?: 'Coffee Classics ☕️' ); ?>
@@ -95,25 +100,24 @@ $group2 = array_slice($items, 3, 3);
 
   <div class="menu-grid">
     <?php foreach ($group2 as $post): setup_postdata($post);
-      $image  = get_field('item_image',  $post->ID);
-      $title  = trim((string) get_field('item_heading', $post->ID));
-      $text   = (string) get_field('item_desc',   $post->ID);
-      $weight = (string) get_field('item_weight', $post->ID);
-      if ($title === '') { $title = get_the_title($post); }
-      $plink  = get_permalink($post);
+      $img    = get_field('item_image',       $post->ID);
+      $label  = trim((string) get_field('item_label',      $post->ID)) ?: get_the_title($post);
+      $text   = (string)   get_field('item_label_text',    $post->ID);
+      $weight = (string)   get_field('item_weight',        $post->ID);
+      $url    = menu_item_url($post->ID);
     ?>
       <article class="mcard">
-        <?php if (!empty($image['ID'])): ?>
-          <a class="mcard__thumb" href="<?php echo esc_url($plink); ?>" aria-label="<?php echo esc_attr($title); ?>">
+        <?php if (!empty($img['ID'])): ?>
+          <a class="mcard__thumb" href="<?php echo esc_url($url); ?>" aria-label="<?php echo esc_attr($label); ?>">
             <div class="mcard__pic">
-              <?php echo wp_get_attachment_image($image['ID'], 'large', false, ['loading'=>'lazy']); ?>
+              <?php echo wp_get_attachment_image($img['ID'], 'mcard', false, ['loading'=>'lazy']); ?>
             </div>
           </a>
         <?php endif; ?>
 
-        <?php if ($title): ?>
+        <?php if ($label): ?>
           <h3 class="mcard__title">
-            <a href="<?php echo esc_url($plink); ?>"><?php echo esc_html($title); ?></a>
+            <a href="<?php echo esc_url($url); ?>"><?php echo esc_html($label); ?></a>
           </h3>
         <?php endif; ?>
 

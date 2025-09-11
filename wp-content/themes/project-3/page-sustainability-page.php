@@ -8,23 +8,8 @@ get_header();
 ?>
 
 <style>
-  /* Tiny starter CSS (you can move to Additional CSS later) */
-  html,body{margin:0;padding:0}
-  *,*::before,*::after{box-sizing:border-box}
-  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:#7c2d2d;color:#fff;line-height:1.6}
-  .wrap{max-width:1080px;margin:0 auto;padding:24px}
-  .subtitle{font-size:14px;color:#f0dcd2;margin:0 0 12px}
-  .hero{display:block;width:100%;height:auto;border-radius:8px;margin:0 0 18px}
-  .title{font-size:28px;font-weight:800;margin:22px 0 12px}
-  .body p{margin:0 0 16px;color:#ffe8e0}
-  .inset{
-    background:#fff7ef;color:#222;border:2px solid #eadacc;border-radius:12px;
-    padding:18px 20px;margin:28px auto; /* center it */
-    width:100%;max-width:640px;box-shadow:0 2px 8px rgba(0,0,0,.08)
-  }
-  .footer{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
-  .footer a{color:#fff;text-decoration:underline}
-  @media (max-width:900px){.title{font-size:22px}.footer{grid-template-columns:1fr}}
+ 
+  
 </style>
 
 <div class="wrap">
@@ -72,7 +57,7 @@ get_header();
   <?php endif; ?>
 
   <?php if ( $hero_url ): ?>
-    <img class="hero" src="<?php echo esc_url( $hero_url ); ?>" alt="<?php echo esc_attr( $hero_alt ); ?>">
+    <img class="hero_1" src="<?php echo esc_url( $hero_url ); ?>" alt="<?php echo esc_attr( $hero_alt ); ?>">
   <?php endif; ?>
 
   <?php if ( $title_txt ): ?>
@@ -87,10 +72,7 @@ get_header();
     <aside class="inset"><?php echo wp_kses_post( $inset_html ); ?></aside>
   <?php endif; ?>
 
-  <footer class="footer">
-    <?php if ( ! empty( $foot_l ) ): ?><div><?php echo wp_kses_post( $foot_l ); ?></div><?php endif; ?>
-    <?php if ( ! empty( $foot_r ) ): ?><div><?php echo wp_kses_post( $foot_r ); ?></div><?php endif; ?>
-  </footer>
+ 
 
 <?php endwhile; ?>
 </div>
