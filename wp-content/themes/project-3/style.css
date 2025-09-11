@@ -696,3 +696,118 @@ body {
   .partners__frame { border-width: 3px; border-radius: 6px; }
   .partners__title { top: 12px; left: 12px; }
 }
+
+
+
+/* ===== SUPPORT & CONTACTS (как в первой версии + равная высота) ===== */
+
+/* секция на всю ширину */
+.support {
+  margin: 0 calc(50% - 50vw);
+  padding: clamp(20px, 3vw, 36px);
+  background: transparent; /* фон страницы остаётся бордовым */
+}
+
+/* две колонки */
+.support__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;      /* слева шире */
+  gap: clamp(20px, 3vw, 48px);
+  align-items: stretch;                   /* ← равная высота колонок */
+  color: #f7ebcf;
+}
+
+/* левая колонка с рамкой */
+.support__left {
+  display: flex;                          /* ← даём блоку внутри тянуться */
+}
+
+.support__box {
+  border: 2px solid #1a1a1a;
+  border-radius: 0;
+  padding: clamp(16px, 2.5vw, 28px);
+  background: transparent;
+  height: 100%;                           /* ← тянем рамку до низа */
+  min-height: 100%;
+}
+
+.support__title {
+  margin: 0 0 12px;
+  font-weight: 800;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.1;
+}
+
+.support__subtitle {
+  margin: 0 0 20px;
+  font-weight: 800;
+  font-size: clamp(20px, 2.4vw, 32px);
+  color: #e9b78f;
+}
+
+.support__p {
+  margin: 0 0 16px;
+  font-size: clamp(16px, 1.8vw, 22px);
+  line-height: 1.6;
+  white-space: pre-wrap; /* переносы и списки с дефисами сохраняются */
+}
+
+/* правая колонка (адрес, email, тексты) */
+.support__right { align-self: stretch; }
+
+.support__addr {
+  margin: 0 0 16px;
+  font-style: normal;
+  font-size: clamp(16px, 1.8vw, 22px);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.support__email {
+  margin: 0 0 18px;
+  font-size: clamp(16px, 1.8vw, 22px);
+}
+.support__email a {
+  color: #f7ebcf;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(247,235,207,.45);
+}
+.support__email a:hover {
+  border-bottom-color: rgba(247,235,207,.9);
+}
+
+/* адаптив — одна колонка */
+@media (max-width: 900px) {
+  .support__inner { grid-template-columns: 1fr; gap: 20px; }
+  .support__left  { display: block; }
+  .support__box   { height: auto; min-height: 0; }
+}
+
+/* === Support: левые и правые колонки заканчиваются на одном уровне === */
+
+/* 1) Снова растягиваем колонки по высоте самой высокой */
+.support__inner {
+  align-items: stretch;                /* было start */
+}
+
+/* 2) Левому боксу позволяем тянуться до полного роста колонки */
+.support__left { display: flex; }
+.support__box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+}
+
+/* 3) Убираем любые лишние «хвосты» снизу (margin-bottom у последних элементов) */
+.support__box > *:last-child,
+.support__right > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* 4) Тонкая подстройка, если из-за рендеринга шрифтов видно 1–2px разницы */
+@media (min-width: 901px) {
+  .support__box { padding-bottom: 2px; }  /* можешь поставить 0 / 1 / 3–4px по вкусу */
+}
