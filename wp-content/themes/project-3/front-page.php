@@ -1,0 +1,294 @@
+<?php
+get_header();
+
+$home_id      = get_queried_object_id();
+$hero_title   = get_field('hero_title', $home_id);
+$hero_desc    = get_field('hero_desc', $home_id);
+$hero_phone   = get_field('hero_phone', $home_id);
+$hero_crois   = get_field('hero_croissant', $home_id);
+$icon_left    = get_field('hero_icon_left', $home_id);
+$icon_right   = get_field('hero_icon_right', $home_id);
+$hero_time    = get_field('hero_time', $home_id);
+$hero_address = get_field('hero_address', $home_id);
+?>
+
+<main class="site-main">
+  <section class="hero">
+    <div class="hero__inner">
+
+      <?php if ($hero_title): ?>
+        <h1 class="hero__title"><?php echo esc_html($hero_title); ?></h1>
+      <?php endif; ?>
+
+      <div class="hero__grid">
+        <!-- ЛЕВО: иконка + 2 строки, прилипает к низу -->
+        <aside class="hero__side hero__side--left">
+          <?php if (!empty($icon_left['ID'])): ?>
+            <?php echo wp_get_attachment_image($icon_left['ID'], 'medium', false, ['class'=>'kid']); ?>
+          <?php endif; ?>
+          <div class="info__text">
+            <?php if ($hero_time): ?><div class="info__time"><?php echo esc_html($hero_time); ?></div><?php endif; ?>
+            <?php if ($hero_address): ?><div class="info__addr"><?php echo esc_html($hero_address); ?></div><?php endif; ?>
+          </div>
+        </aside>
+
+        <!-- ЦЕНТР: телефон + круассан, строго по центру -->
+        <div class="hero__center">
+          <div class="phone-wrap">
+            <?php if (!empty($hero_phone['ID'])): ?>
+              <?php echo wp_get_attachment_image($hero_phone['ID'], 'large', false, ['class'=>'phone']); ?>
+            <?php endif; ?>
+
+            <?php if (!empty($hero_crois['ID'])): ?>
+              <?php echo wp_get_attachment_image($hero_crois['ID'], 'large', false, ['class'=>'croissant']); ?>
+            <?php endif; ?>
+          </div>
+        </div>
+
+        <!-- ПРАВО: пекарь + абзац -->
+        <aside class="hero__side hero__side--right">
+          <?php if (!empty($icon_right['ID'])): ?>
+            <?php echo wp_get_attachment_image($icon_right['ID'], 'medium', false, ['class'=>'chef']); ?>
+          <?php endif; ?>
+          <?php if ($hero_desc): ?>
+            <p class="hero__desc"><?php echo esc_html($hero_desc); ?></p>
+          <?php endif; ?>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+
+
+<?php
+// данные из ACF
+$home_id   = get_queried_object_id();
+$g_title   = get_field('green_title', $home_id);
+$g_txt1    = get_field('green_text1', $home_id);
+$g_txt2    = get_field('green_text2', $home_id);
+$g_btn_txt = get_field('green_button_label', $home_id) ?: 'READ MORE';
+$g_btn_url = get_field('green_button_link',  $home_id);
+?>
+
+<section class="green">
+  <div class="green__inner">
+    <?php if ($g_title): ?>
+      <h2 class="green__title"><?php echo esc_html($g_title); ?></h2>
+    <?php endif; ?>
+
+    <?php if ($g_txt1): ?>
+      <p class="green__p"><?php echo esc_html($g_txt1); ?></p>
+    <?php endif; ?>
+
+    <?php if ($g_txt2): ?>
+      <p class="green__p"><?php echo esc_html($g_txt2); ?></p>
+    <?php endif; ?>
+
+    <?php if ($g_btn_url): ?>
+      <div class="green__btnwrap">
+        <a class="btn-pill" href="<?php echo esc_url($g_btn_url); ?>">
+          <?php echo esc_html($g_btn_txt); ?>
+        </a>
+      </div>
+    <?php endif; ?>
+  </div>
+</section>
+
+
+<?php
+// ЛЕВАЯ колонка: берём поля со страницы Home
+$home_id  = get_queried_object_id();
+$t_title  = get_field('themes_title', $home_id);
+$t_p1     = get_field('themes_text1', $home_id);
+$t_p2     = get_field('themes_text2', $home_id);
+
+// ПРАВАЯ колонка: 6 записей из твоего Post Type (замени 'theme_tile' на твой slug, если другой)
+$tiles = get_posts([
+  'post_type'      => 'theme_tile',
+  'posts_per_page' => 6,
+  'orderby'        => 'date', // хочешь ручной порядок — сделай 'menu_order' и заполняй Order
+  'order'          => 'ASC',
+]);
+?>
+
+<section class="themes">
+  <div class="themes__inner">
+    <!-- ЛЕВАЯ колонка: заголовок + 2 абзаца -->
+    <div class="themes__left">
+      <h2 class="themes__title"><?php echo esc_html($t_title); ?></h2>
+      <p class="themes__p"><?php echo nl2br(esc_html($t_p1)); ?></p>
+      <p class="themes__p"><?php echo nl2br(esc_html($t_p2)); ?></p>
+    </div>
+
+    <!-- ПРАВАЯ колонка: сетка 2×3 -->
+    <div class="themes__right">
+      <div class="themes__grid">
+        <?php foreach ($tiles as $post): setup_postdata($post); ?>
+          <?php
+            $id   = $post->ID;
+            $img  = get_field('tile_image', $id); // ACF Image (array)
+            $text = get_field('tile_text',  $id); // ACF Text
+          ?>
+          <article class="tile">
+            <div class="tile__img">
+              <?php
+                if (!empty($img['ID'])) {
+                  echo wp_get_attachment_image($img['ID'], 'large', false, ['loading'=>'lazy','decoding'=>'async']);
+                }
+              ?>
+            </div>
+            <h3 class="tile__title"><?php echo esc_html($text); ?></h3>
+          </article>
+        <?php endforeach; wp_reset_postdata(); ?>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<?php
+// ===== Latest news (заголовок с Home + карточки из CPT) =====
+$home_id    = (int) get_option('page_on_front') ?: get_queried_object_id();
+$news_title = function_exists('get_field') ? get_field('news_section_title', $home_id) : '';
+$news_title = $news_title ?: 'Latest news';
+
+$news = get_posts([
+  'post_type'      => 'news_item',   // ← замени на свой slug, если другой
+  'posts_per_page' => -1,
+  'orderby'        => 'date',
+  'order'          => 'DESC',
+]);
+?>
+
+<section class="news">
+  <div class="news__inner">
+    <h2 class="news__title"><?php echo esc_html($news_title); ?></h2>
+
+    <!-- Видимая область (не скроллится мышкой) -->
+    <div class="news__viewport" id="newsViewport">
+      <div class="news__track" id="newsTrack">
+        <?php foreach ($news as $post): setup_postdata($post); ?>
+          <?php
+            $id       = $post->ID;
+            $img      = get_field('news_image', $id);      // Image (array)
+            $heading  = (string) get_field('news_heading', $id);
+            $excerpt  = (string) get_field('news_excerpt', $id);
+            $date_raw = (string) get_field('news_date', $id);
+            $date_out = $date_raw ? date_i18n(get_option('date_format'), strtotime($date_raw)) : get_the_date('', $id);
+            $tag      = (string) get_field('news_tag', $id);
+          ?>
+          <article class="news__card">
+            <div class="news__img">
+              <?php if (!empty($img['ID'])) echo wp_get_attachment_image($img['ID'], 'large', false, ['loading'=>'lazy']); ?>
+            </div>
+            <?php if ($heading): ?><h3 class="news__heading"><?php echo esc_html($heading); ?></h3><?php endif; ?>
+            <?php if ($excerpt): ?><p class="news__excerpt"><?php echo esc_html($excerpt); ?></p><?php endif; ?>
+            <div class="news__meta"><time datetime="<?php echo esc_attr($date_raw ?: get_the_date('c', $id)); ?>"><?php echo esc_html($date_out); ?></time></div>
+            <?php if ($tag): ?><div class="news__tag"><?php echo esc_html($tag); ?></div><?php endif; ?>
+          </article>
+        <?php endforeach; wp_reset_postdata(); ?>
+      </div>
+    </div>
+
+    <div class="news__more">
+      <button type="button" class="btn-pill" id="newsMoreBtn">More news</button>
+    </div>
+  </div>
+</section>
+
+
+
+<?php
+// ===== Blog teaser (из ACF на Home) =====
+$home_id = (int) get_option('page_on_front') ?: get_queried_object_id();
+
+$title     = get_field('blog_teaser_title',   $home_id);
+$image     = get_field('blog_teaser_image',   $home_id);   // array
+$subtitle  = get_field('blog_teaser_subtitle',$home_id);
+$text1     = get_field('blog_teaser_text1',   $home_id);
+$text2     = get_field('blog_teaser_text2',   $home_id);
+$btn_label = get_field('blog_teaser_button_label', $home_id) ?: 'See all posts';
+$btn_link  = get_field('blog_teaser_button_link',  $home_id);
+?>
+
+<section class="blogteaser">
+  <div class="blogteaser__inner">
+
+    <div class="blogteaser__left">
+      <?php if ($title): ?>
+        <h2 class="blogteaser__title"><?php echo esc_html($title); ?></h2>
+      <?php endif; ?>
+
+      <?php if (!empty($image['ID'])): ?>
+        <div class="blogteaser__img">
+          <?php echo wp_get_attachment_image($image['ID'], 'large', false, ['loading'=>'lazy']); ?>
+        </div>
+      <?php endif; ?>
+    </div>
+
+    <div class="blogteaser__right">
+      <?php if ($subtitle): ?>
+        <h3 class="blogteaser__subtitle"><?php echo esc_html($subtitle); ?></h3>
+      <?php endif; ?>
+
+      <?php if ($text1): ?>
+        <p class="blogteaser__p"><?php echo nl2br(esc_html($text1)); ?></p>
+      <?php endif; ?>
+
+      <?php if ($text2): ?>
+        <p class="blogteaser__p"><?php echo nl2br(esc_html($text2)); ?></p>
+      <?php endif; ?>
+    </div>
+
+    <?php if ($btn_link): ?>
+      <div class="blogteaser__cta">
+        <a class="btn-pill" href="<?php echo esc_url($btn_link); ?>">
+          <?php echo esc_html($btn_label); ?>
+        </a>
+      </div>
+    <?php endif; ?>
+
+  </div>
+</section>
+
+
+
+<?php
+// ===== Partners block (ACF на Home) =====
+$home_id  = (int) get_option('page_on_front') ?: get_queried_object_id();
+
+$p_title  = get_field('partners_title',  $home_id);
+$p_image  = get_field('partners_image',  $home_id);   // array
+$p_cap    = get_field('partners_caption',$home_id);
+?>
+
+<section class="partners">
+  <div class="partners__inner">
+
+    <div class="partners__frame">
+      <?php if (!empty($p_image['ID'])): ?>
+        <?php echo wp_get_attachment_image($p_image['ID'], 'full', false, ['loading'=>'lazy']); ?>
+      <?php endif; ?>
+      <?php if ($p_title): ?>
+        <div class="partners__title"><?php echo esc_html($p_title); ?></div>
+      <?php endif; ?>
+    </div>
+
+    <?php if ($p_cap): ?>
+      <p class="partners__caption">
+        <?php echo esc_html($p_cap); ?>
+      </p>
+    <?php endif; ?>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<?php get_footer(); ?>
