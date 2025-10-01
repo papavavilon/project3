@@ -7,10 +7,7 @@ get_header();
 get_header();
 ?>
 
-<style>
- 
-  
-</style>
+<main class="site-main">
 
 <div class="wrap">
 <?php while ( have_posts() ) : the_post();
@@ -77,5 +74,6 @@ get_header();
 <?php endwhile; ?>
 </div>
 
+</main>
 <?php get_footer(); ?>
 

@@ -38,7 +38,8 @@ body {
 .site-nav__actions {
   display: inline-flex;
   align-items: center;
-  gap: 82px;
+  gap: 112px;
+
 }
 
 
@@ -54,6 +55,7 @@ body {
   color: #FFF8D8;
   font-weight: 600;
   line-height: 1;
+
 }
 
 .pill--text {
@@ -432,17 +434,13 @@ html,body{
 
 
 /* cards Bloc */
-/* ========== BLOG LAYOUT (one column) ========== */
 
-/* ===== BLOG (ничего глобального не ломаем) ===== */
-
-/* Страница блога — без max-width, чтобы шапка/навигация не сужалась */
 .blog{
   margin:48px auto;
   padding:0 16px;
 }
 
-/* Заголовок страницы выравниваем по той же ширине, что и сетка */
+
 .blog__header{
   max-width:1200px;
   margin:0 auto 24px auto;
@@ -453,27 +451,27 @@ html,body{
   margin:0;
 }
 
-/* ===== СЕТКА КАРТОЧЕК =====
-   Центрируем, ограничиваем только саму сетку, 4 колонки на ≥1200px */
+
+  
 .blog__grid{
   display:grid;
   gap:20px;
-  max-width:1200px;     /* ширина ТОЛЬКО у сетки, навбар не трогаем */
-  margin:0 auto;        /* центрируем сетку */
-  grid-template-columns: repeat(1, minmax(0, 1fr)); /* мобилка: 1 */
+  max-width:1200px;     
+  margin:0 auto;      
+  grid-template-columns: repeat(1, minmax(0, 1fr)); 
 }
 
-/* Пагинация/пустое состояние — по той же ширине, что и сетка */
+
 .blog__pagination{
   max-width:1200px;
   margin:24px auto 0;
 }
 .blog__empty{ opacity:.75; }
 
-/* ===== КАРТОЧКА ===== */
+
 .blog-card{
-  background:#7c2323;
-  color:#fff;
+  background:#842222;
+  color:#FFF8D8;
   border-radius:18px;
   padding:20px;
   box-shadow:0 12px 24px rgba(0,0,0,.15);
@@ -482,7 +480,7 @@ html,body{
   min-height:260px;
 }
 
-/* Картинка: не «уже», центрируем, фикс. высота блока 110px */
+
 .blog-card__image{
   height:110px;
   display:flex;
@@ -496,21 +494,20 @@ html,body{
   display:block;
 }
 
-/* Заголовок — НЕ ссылка (ты так просила) */
+
 .blog-card__title{
   font-size:18px;
   font-weight:700;
   margin:0 0 8px;
 }
 
-/* Короткий текст */
+
 .blog-card__excerpt{
   margin:0 0 14px;
   line-height:1.45;
-  opacity:.95;
+  color:#fff8d8bf;
 }
 
-/* Низ карточки: слева бейдж, справа кнопка */
 .blog-card__footer{
   margin-top:auto;
   display:flex;
@@ -522,11 +519,11 @@ html,body{
   opacity:.85;
 }
 
-/* Кнопка Read more — единственная ссылка */
+
 .blog-card__button{
   display:inline-block;
   padding:8px 14px;
-  background:#fff;
+  background:#FFF8D8;
   color:#7c2323;
   border-radius:10px;
   font-weight:600;
@@ -539,7 +536,6 @@ html,body{
   opacity:.95;
 }
 
-/* Немного полиша для тёмной темы */
 @media (prefers-color-scheme:dark){
   .blog-card{ box-shadow:0 12px 24px rgba(0,0,0,.25); }
 }
@@ -555,28 +551,28 @@ html,body{
 }
 
 
-/* разделительная линия под глобальной навигацией */
+
 .blog__divider{
   height:1px;
   background:rgba(0,0,0,.15);
   margin:8px 0 16px;
 }
 
-/* контейнер кнопок */
+
 .section-nav{
   display:flex;
   gap:16px;
-  max-width:1200px;   /* совпадает с шириной сетки */
-  margin:0 auto 16px; /* центрируем */
+  max-width:1200px;   
+  margin:0 auto 16px; 
 }
 
-/* кнопки */
+
 .section-nav__btn{
   display:inline-block;
   padding:10px 18px;
   border-radius:28px;
   background:#8e2b2b;
-  color:#fff;
+  color:#FFF8D8;
   text-decoration:none;
   box-shadow:0 6px 14px rgba(0,0,0,.15);
   font-weight:600;
@@ -594,7 +590,7 @@ html,body{
   margin:16px auto;
   font-size:28px;
   font-weight:800;
-  color:#ffe7cf;
+  color:#FFF8D8;
 }
 
 
@@ -604,49 +600,38 @@ html,body{
   margin:16px auto;
   font-size:28px;
   font-weight:800;
-  color:#ffe7cf;
+  color:#FFF8D8;
 }
 
 
 
-/* 1) Плавный скролл для якорных ссылок */
+
 html {
   scroll-behavior: smooth;
 }
 
-/* 2) Высоты (подгони под свою тему, при необходимости) */
+
 :root{
-  --site-header-h: 64px;   /* высота твоей верхней шапки/меню. Если другая — поменяй */
-  --section-nav-h: 48px;   /* примерная высота панели с кнопками */
-  --section-gap:   12px;   /* отступ под панелью */
+  --site-header-h: 64px;   
+  --section-nav-h: 48px;   
+  --section-gap:   12px;   
 }
 
-/* 3) Делаем панель с кнопками «липкой» */
+
 .section-nav{
   position: sticky;
-  top: var(--site-header-h);      /* панель прижмётся прямо под твою шапку */
-  z-index: 100;                   /* поверх контента */              /* фон под кнопками, чтобы текст под ними не просвечивал */
-  padding: 3px 0;                 /* лёгкий внутренний отступ */
+  top: var(--site-header-h);      
+  z-index: 100;                   
+  padding: 3px 0;                 
 
 }
 
-/* чтобы фон не обрывался по краям при max-width — оставим так; 
-   если нужно на всю ширину — можно перенести фон/бордер на отдельный full-width контейнер */
 
-/* уже существующие стили — оставь как были */
-.section-nav{ display:flex; gap:16px; max-width:1200px; ; }
-.section-nav__btn{
-  display:inline-block; padding:10px 18px; border-radius:28px;
-  background:#8e2b2b; color:#fff; text-decoration:none; font-weight:600;
-  box-shadow:0 6px 14px rgba(0,0,0,.15);
-  transition:transform .08s ease, box-shadow .08s ease, opacity .08s ease;
-}
+
 .section-nav__btn:hover{ transform:translateY(-1px); box-shadow:0 6px 12px rgba(0,0,0,.12); opacity:.95; }
 
-/* 4) Отступ-«запас» для секций, чтобы заголовок не уезжал под липкую панель */
+
 .blog-section {
   scroll-margin-top: calc(var(--site-header-h) + var(--section-nav-h) + var(--section-gap));
 }
-
-/* если у тебя уже есть .blog__divider — можно оставить; она не мешает */
 

@@ -1,15 +1,15 @@
 <?php get_header() ?>
-
+<main class="site-main">
 <div class="blog">
   <div class="blog__header"></div>
 
   <?php
-  // ID страницы блога (Settings → Reading → Posts page)
   $blog_page_id = get_option('page_for_posts');
 
-  // Кнопки из ACF
+ 
   $labels = array();
   if (function_exists('get_field')) {
+    $labels[] = get_field('top_button_0_label', $blog_page_id);
     $labels[] = get_field('top_button_1_label', $blog_page_id);
     $labels[] = get_field('top_button_2_label', $blog_page_id);
     $labels[] = get_field('top_button_3_label', $blog_page_id);
@@ -38,11 +38,13 @@
 
   <?php
   // Заголовки секций из ACF
+  $sec0_title = function_exists('get_field') ? (get_field('section0_title', $blog_page_id) ?: 'Our Tableware') : 'Our Tableware';
   $sec1_title = function_exists('get_field') ? (get_field('section1_title', $blog_page_id) ?: 'Salty food') : 'Salty food';
   $sec2_title = function_exists('get_field') ? (get_field('section2_title', $blog_page_id) ?: 'Drinks')     : 'Drinks';
   $sec3_title = function_exists('get_field') ? (get_field('section3_title', $blog_page_id) ?: 'Desserts')   : 'Desserts';
 
   $sections = [
+    ['our_tableware', $sec0_title, 2],
     ['salty-food', $sec1_title, 12],
     ['drinks',     $sec2_title, 14],
     ['desserts',   $sec3_title, 12],
@@ -68,7 +70,7 @@
   ?>
 
     <section id="<?php echo esc_attr($id); ?>" class="blog-section">
-      <h2 class="blog-section__title"><?php echo esc_html($title); ?></h2>
+      <h1 class="blog-section__title"><?php echo esc_html($title); ?></h1>
 
       <?php if ($q->have_posts()): ?>
         <div class="blog__grid">
@@ -93,7 +95,7 @@
                 </div>
               <?php endif; ?>
 
-              <h3 class="blog-card__title"><?php echo esc_html($ttl); ?></h3>
+              <h2 class="blog-card__title"><?php echo esc_html($ttl); ?></h2>
               <p class="blog-card__excerpt"><?php echo esc_html($excerpt); ?></p>
 
               <div class="blog-card__footer">
@@ -111,4 +113,5 @@
 
 </div>
 
+</main>
 <?php get_footer() ?>

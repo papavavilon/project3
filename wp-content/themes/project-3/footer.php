@@ -1,5 +1,5 @@
 <?php
-// короткий JS для открытия/закрытия формы поиска рядом с иконкой
+
 ?>
 <script>
 (function(){
@@ -31,19 +31,19 @@
   const btn   = document.getElementById('newsMoreBtn');
   if (!track || !btn) return;
 
-  let index = 0; // текущий слайд (страница)
+  let index = 0;
   function slideNext(){
-    const viewport = track.parentElement;             // .news__viewport
+    const viewport = track.parentElement;            
     const cards = track.querySelectorAll('.news__card');
     if (!cards.length) return;
 
     const gapPx = parseInt(getComputedStyle(track).gap) || 0;
     const isMobile = window.matchMedia('(max-width: 960px)').matches;
 
-    // ширина шага: ширина видимой области (2 карточки на десктопе, 1 на мобиле)
+    
     const step = viewport.clientWidth + gapPx;
 
-    // максимальное количество страниц (округляем вверх)
+    
     const totalWidth = track.scrollWidth;
     const maxIndex = Math.ceil(totalWidth / step) - 1;
 
@@ -55,7 +55,7 @@
 
   btn.addEventListener('click', slideNext);
 
-  // При ресайзе возвращаем в начало (чтобы не «зависало» между страницами)
+  
   window.addEventListener('resize', () => {
     index = 0;
     track.style.transform = 'translateX(0)';
@@ -63,35 +63,44 @@
 })();
 </script>
 
+
+
 <?php
 // ===== Support & Contacts =====
 $home_id = (int) get_option('page_on_front') ?: get_queried_object_id();
-
 
 $s_title    = get_field('support_title',    $home_id);
 $s_subtitle = get_field('support_subtitle', $home_id);
 $s_txt1     = get_field('support_text1',    $home_id);
 $s_txt2     = get_field('support_text2',    $home_id);
 
-$c_addr   = get_field('contact_address', $home_id);
-$c_email  = get_field('contact_email',  $home_id);
-$c_txt1   = get_field('contact_text1',  $home_id);
-$c_txt2   = get_field('contact_text2',  $home_id);
+$c_addr = get_field('contact_address', $home_id);
+$c_email = get_field('contact_email',  $home_id);
+$c_txt1 = get_field('contact_text1',   $home_id);
+$c_txt2 = get_field('contact_text2',   $home_id);
+
+$section_attrs = '';
+if ($s_title) {
+  $section_attrs = 'aria-labelledby="support-title"';
+} elseif ($s_subtitle) {
+  $section_attrs = 'aria-labelledby="support-subtitle"';
+} else {
+  $section_attrs = 'aria-label="Support and contacts"';
+}
 ?>
 
-<section class="support">
-    <hr class="divider">
+<section class="support" <?php echo $section_attrs; ?>>
+  <hr class="divider" aria-hidden="true" role="presentation">
   <div class="support__inner">
 
-   
     <div class="support__left">
       <div class="support__box">
         <?php if ($s_title): ?>
-          <h2 class="support__title"><?php echo esc_html($s_title); ?></h2>
+          <h2 id="support-title" class="support__title"><?php echo esc_html($s_title); ?></h2>
         <?php endif; ?>
 
         <?php if ($s_subtitle): ?>
-          <h3 class="support__subtitle"><?php echo esc_html($s_subtitle); ?></h3>
+          <h3 id="support-subtitle" class="support__subtitle"><?php echo esc_html($s_subtitle); ?></h3>
         <?php endif; ?>
 
         <?php if ($s_txt1): ?>
@@ -104,7 +113,6 @@ $c_txt2   = get_field('contact_text2',  $home_id);
       </div>
     </div>
 
-   
     <div class="support__right">
       <?php if ($c_addr): ?>
         <address class="support__addr"><?php echo nl2br(esc_html($c_addr)); ?></address>
@@ -131,3 +139,5 @@ $c_txt2   = get_field('contact_text2',  $home_id);
 <?php wp_footer(); ?>
 </body>
 </html>
+
+

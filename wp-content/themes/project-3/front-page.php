@@ -62,7 +62,7 @@ $hero_address = get_field('hero_address', $home_id);
 
     </div>
   </section>
-</main>
+
 
 
 
@@ -143,7 +143,7 @@ $tiles = get_posts([
                 }
               ?>
             </div>
-            <h3 class="tile__title"><?php echo esc_html($text); ?></h3>
+            <p class="tile__title"><?php echo esc_html($text); ?></p>
           </article>
         <?php endforeach; wp_reset_postdata(); ?>
       </div>
@@ -289,6 +289,9 @@ $p_cap    = get_field('partners_caption',$home_id);
   </div>
 </section>
 
+
+
+</main>
 
 
 
