@@ -288,10 +288,10 @@ $p_cap    = get_field('partners_caption',$home_id);
 
   </div>
 </section>
-
-
-
 </main>
+
+
+
 
 
 

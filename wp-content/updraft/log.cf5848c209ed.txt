@@ -1,0 +1,10 @@
+0000.001 (0) Opened log file at time: Wed, 08 Oct 2025 05:58:13 +0000 on http://localhost:10141
+0000.122 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.8 WP: 6.8.2 PHP: 8.2.27 (fpm-fcgi, Darwin Mac 24.6.0 Darwin Kernel Version 24.6.0: Mon Jul 14 11:29:54 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T8122 arm64) MySQL: 8.0.43-34 (max packet size=104857600) WPLANG: en_US Server: nginx/1.26.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 4.5M | 6M) multisite: N openssl: OpenSSL 3.4.1 11 Feb 2025 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.183 (0) Free space on disk containing Updraft's temporary directory: 132625.7 MB
+0000.280 (0) Tasks: Backup files:  (schedule: weekly) Backup DB: 1 (schedule: daily)
+0000.310 (0) Processed schedules. Tasks now: Backup files:  Backup DB: 1
+0000.440 (0) Requesting semaphore lock (d) (apparently via scheduler: last_scheduled_action_called_at=1759822096, seconds_ago=80998)
+0000.573 (0) Set semaphore last lock (d) time to 2025-10-08 05:58:14
+0000.601 (0) Semaphore lock (d) complete
+0000.879 (0) Backup run: resumption=0, nonce=cf5848c209ed, file_nonce=cf5848c209ed begun at=1759903093 (1s ago), job type=backup
+1516.431 (0) PHP event: code E_WARNING: mysqli_real_connect(): php_network_getaddresses: getaddrinfo for mysql38.unoeuro.com failed: nodename nor servname provided, or not known (line 1991, wp-includes/class-wpdb.php)

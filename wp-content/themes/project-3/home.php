@@ -37,7 +37,7 @@
 
 
   <?php
-  // Заголовки секций из ACF
+
   $sec0_title = function_exists('get_field') ? (get_field('section0_title', $blog_page_id) ?: 'Our Tableware') : 'Our Tableware';
   $sec1_title = function_exists('get_field') ? (get_field('section1_title', $blog_page_id) ?: 'Salty food') : 'Salty food';
   $sec2_title = function_exists('get_field') ? (get_field('section2_title', $blog_page_id) ?: 'Drinks')     : 'Drinks';

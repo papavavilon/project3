@@ -1,0 +1,296 @@
+0000.001 (0) Opened log file at time: Tue, 07 Oct 2025 05:42:32 +0000 on http://localhost:10141
+0000.130 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.8 WP: 6.8.2 PHP: 8.2.27 (fpm-fcgi, Darwin Mac 24.6.0 Darwin Kernel Version 24.6.0: Mon Jul 14 11:29:54 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T8122 arm64) MySQL: 8.0.43-34 (max packet size=104857600) WPLANG: en_US Server: nginx/1.26.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 4.4M | 6M) multisite: N openssl: OpenSSL 3.4.1 11 Feb 2025 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.165 (0) Free space on disk containing Updraft's temporary directory: 140105.9 MB
+0000.255 (0) Tasks: Backup files: 1 (schedule: weekly) Backup DB:  (schedule: daily)
+0000.325 (0) Processed schedules. Tasks now: Backup files: 1 Backup DB: 
+0000.403 (0) Semaphore (f, wp_options) being initialised
+0000.578 (0) Requesting semaphore lock (f) (apparently not via scheduler)
+0000.712 (0) Set semaphore last lock (f) time to 2025-10-07 05:42:33
+0000.741 (0) Semaphore lock (f) complete
+0000.924 (0) Backup run: resumption=0, nonce=a0c73e168833, file_nonce=a0c73e168833 begun at=1759815752 (1s ago), job type=backup
+0000.995 (0) Scheduling a resumption (1) after 300 seconds (1759816053) in case this run gets aborted
+0001.067 (0) Checking if we have a zip executable available
+0001.103 (0) Testing: /usr/bin/zip
+0001.166 (0) Output: zip warning: binziptest/test.zip not found or empty
+0001.197 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0001.230 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0001.262 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0001.296 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0001.349 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0001.381 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0001.413 (0) Working binary zip found: /usr/bin/zip
+0001.485 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0001.515 (0) Creation of backups of directories: beginning
+0001.619 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0001.776 (0) Total entities for the zip file: 388 directories, 2774 files (0 skipped as non-modified), 54.8 MB
+0001.808 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0001.838 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0001.874 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0001.912 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0001.955 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0001.992 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 600 files added (on-disk size: 0 KB)
+0002.033 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 700 files added (on-disk size: 0 KB)
+0002.072 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (25.1 MB, 2774 files batched, 777 (777) added so far); re-opening (prior size: 0 KB)
+0002.800 (0) backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: size is now: 6.90 MB
+0002.869 (0) A useful amount of data was added after this amount of zip processing: 1.7 s (normalised: 1.7 s, rate: 15166.8 KB/s)
+0002.940 (0) Performance is good - will increase the amount of data we attempt to batch (time=1.6921989917755, normalised_time=1.6878949703486, max_time=2.9031128883362, data points known=1, old_max_bytes=26214400, new_max_bytes=93184945)
+0003.012 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 800 files added (on-disk size: 7094.1 KB)
+0003.049 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 900 files added (on-disk size: 7094.1 KB)
+0003.089 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 1000 files added (on-disk size: 7094.1 KB)
+0003.129 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 1100 files added (on-disk size: 7094.1 KB)
+0003.168 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 1200 files added (on-disk size: 7094.1 KB)
+0003.206 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 1300 files added (on-disk size: 7094.1 KB)
+0003.246 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 1400 files added (on-disk size: 7094.1 KB)
+0003.281 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 1500 files added (on-disk size: 7094.1 KB)
+0003.318 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 1600 files added (on-disk size: 7094.1 KB)
+0003.355 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 1700 files added (on-disk size: 7094.1 KB)
+0003.391 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (9.1 MB, 2774 files batched, 1001 (1778) added so far); re-opening (prior size: 7094.1 KB)
+0003.709 (0) backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: size is now: 10.80 MB
+0003.779 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 1800 files added (on-disk size: 11025.2 KB)
+0003.813 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 1900 files added (on-disk size: 11025.2 KB)
+0003.849 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 2000 files added (on-disk size: 11025.2 KB)
+0003.886 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 2100 files added (on-disk size: 11025.2 KB)
+0003.923 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 2200 files added (on-disk size: 11025.2 KB)
+0003.962 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 2300 files added (on-disk size: 11025.2 KB)
+0004.002 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 2400 files added (on-disk size: 11025.2 KB)
+0004.048 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 2500 files added (on-disk size: 11025.2 KB)
+0004.091 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 2600 files added (on-disk size: 11025.2 KB)
+0004.129 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: 2700 files added (on-disk size: 11025.2 KB)
+0004.683 (0) backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.tmp: size is now: 16.60 MB
+0004.764 (0) Creating zip file manifest (backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.list-temp.tmp)
+0004.794 (0) Successfully created zip file manifest (size: 224794)
+0005.059 (0) Created plugins zip (0) - 17017 KB in 3.4 s (5052.2 KB/s) (sha1: b0386f96028d60806a0d80dc68c0c1a0c6e894e5, sha256: 4a8b3464b7a49f4696fbcdf63d38503e89199696d60de0144720ec08bb5057ef)
+1915.209 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+1915.243 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-830ef8fb558772fc7e742369f9d70740)
+1917.277 (0) Google Drive: quota usage: used=4241.9 MB, total=15360 MB, available=11118.1 MB
+1917.310 (0) Google Drive: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip: Attempting to upload to Google Drive (into folder id: 1iJCRhm49Ok5KBdv_weaN5xjubSdqBbyk)
+2820.903 (0) Google Drive: ERROR: upload exception (UDP_Google_IO_Exception): Operation timed out after 902766 milliseconds with 0 bytes received (line: 117, file: /Users/polinabarannyk/Local Sites/project3/app/public/wp-content/plugins/updraftplus/includes/Google/IO/Curl.php)
+4351.708 (0) Google Drive: ERROR: upload exception (UDP_Google_IO_Exception): Operation timed out after 1042504 milliseconds with 0 bytes received (line: 117, file: /Users/polinabarannyk/Local Sites/project3/app/public/wp-content/plugins/updraftplus/includes/Google/IO/Curl.php)
+5328.933 (0) Google Drive: Upload exception (UDP_Google_IO_Exception): Operation timed out after 1042504 milliseconds with 0 bytes received (line: 117, file: /Users/polinabarannyk/Local Sites/project3/app/public/wp-content/plugins/updraftplus/includes/Google/IO/Curl.php)
+5328.969 (0) An error condition has occurred for the first time during this job
+5329.080 (0) Beginning creation of dump of themes (split every: 400 MB)
+5329.177 (0) Total entities for the zip file: 48 directories, 402 files (0 skipped as non-modified), 13.6 MB
+5329.214 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+5329.253 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+5329.290 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+5329.329 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip.tmp: 400 files added (on-disk size: 0 KB)
+5329.674 (0) backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip.tmp: size is now: 12.60 MB
+5329.813 (0) The time we have been running (5329.7) is approaching the resumption interval (300) - increasing resumption interval to 5360
+5329.888 (0) Creating zip file manifest (backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip.list-temp.tmp)
+5329.925 (0) Successfully created zip file manifest (size: 28295)
+5330.178 (0) Created themes zip (0) - 12921.1 KB in 1 s (12552.5 KB/s) (sha1: 43385f84964b2e6737d0f183419caae4165828f2, sha256: e71e6fda4a926c291cc80f180b545c949726468a62be772fe0e3b1eedee1f2fe)
+5330.247 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+5330.278 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-830ef8fb558772fc7e742369f9d70740)
+5330.876 (0) Google Drive: quota usage: used=4241.9 MB, total=15360 MB, available=11118.1 MB
+5330.906 (0) Google Drive: backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip: Attempting to upload to Google Drive (into folder id: 1iJCRhm49Ok5KBdv_weaN5xjubSdqBbyk)
+6333.024 (0) Google Drive: ERROR: upload exception (UDP_Google_IO_Exception): Operation timed out after 1001219 milliseconds with 0 bytes received (line: 117, file: /Users/polinabarannyk/Local Sites/project3/app/public/wp-content/plugins/updraftplus/includes/Google/IO/Curl.php)
+7257.381 (0) Google Drive: Upload exception (Google_Auth_Exception): Error refreshing the OAuth2 token, message: '{
+  "error": "invalid_request",
+  "error_description": "Missing required parameter: refresh_token"
+}' (line: 359, file: /Users/polinabarannyk/Local Sites/project3/app/public/wp-content/plugins/updraftplus/includes/Google/Auth/OAuth2.php)
+7257.415 (0) Google Drive: backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip: will attempt to refresh OAuth2 token and upload again
+7259.819 (0) The time we have been running (7259.7) is approaching the resumption interval (5360) - increasing resumption interval to 7290
+7259.887 (0) Googledrive chunked upload: 7.9 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 5.7 / 10)
+7260.799 (0) The time we have been running (7260.7) is approaching the resumption interval (7290) - increasing resumption interval to 7291
+7260.872 (0) Googledrive chunked upload: 23.8 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 5.8 / 10)
+7262.025 (0) The time we have been running (7261.9) is approaching the resumption interval (7291) - increasing resumption interval to 7292
+7262.093 (0) Googledrive chunked upload: 55.5 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 5.8 / 10)
+7924.526 (0) Google Drive: ERROR: upload exception (UDP_Google_IO_Exception): Operation timed out after 662352 milliseconds with 0 bytes received (line: 117, file: /Users/polinabarannyk/Local Sites/project3/app/public/wp-content/plugins/updraftplus/includes/Google/IO/Curl.php)
+7930.797 (0) The time we have been running (7930.7) is approaching the resumption interval (7292) - increasing resumption interval to 7961
+7931.185 (0) Googledrive chunked upload: 7.9 % uploaded (1048576)
+7933.962 (0) The time we have been running (7933.9) is approaching the resumption interval (7961) - increasing resumption interval to 7964
+7934.368 (0) Googledrive chunked upload: 15.9 % uploaded (2097152)
+7941.291 (0) The time we have been running (7941.2) is approaching the resumption interval (7964) - increasing resumption interval to 7972
+7941.712 (0) Googledrive chunked upload: 23.8 % uploaded (3145728)
+7943.414 (0) The time we have been running (7943.3) is approaching the resumption interval (7972) - increasing resumption interval to 7974
+7943.618 (0) Googledrive chunked upload: 31.7 % uploaded (4194304 - increasing chunk size to 2048 KB - memory usage: 13.8 / 20)
+7948.189 (0) The time we have been running (7948.1) is approaching the resumption interval (7974) - increasing resumption interval to 7979
+7948.346 (0) Googledrive chunked upload: 47.6 % uploaded (6291456)
+7949.408 (0) The time we have been running (7949.2) is approaching the resumption interval (7979) - increasing resumption interval to 7980
+7949.483 (0) Googledrive chunked upload: 63.4 % uploaded (8388608 - increasing chunk size to 4096 KB - memory usage: 13.8 / 20)
+7952.113 (0) The time we have been running (7952) is approaching the resumption interval (7980) - increasing resumption interval to 7983
+7952.185 (0) Googledrive chunked upload: 95.1 % uploaded (12582912 - increasing chunk size to 8192 KB - memory usage: 13.8 / 20)
+7954.722 (0) The time we have been running (7954.6) is approaching the resumption interval (7983) - increasing resumption interval to 7985
+7954.799 (0) Googledrive chunked upload: 100 % uploaded (12582912)
+7954.909 (0) Google Drive: OK: Archive backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip uploaded in 697.06 seconds
+7955.115 (0) Recording as successfully uploaded: backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip
+7955.189 (0) Deleting local file: backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip: OK
+7955.339 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots,wp-staging
+7955.390 (0) Looking for candidates to backup in: /Users/polinabarannyk/Local Sites/project3/app/public/wp-content/uploads
+7955.452 (0) finding files: 2025: adding to list (1)
+7955.485 (0) finding files: aios: adding to list (2)
+7955.521 (0) Beginning creation of dump of uploads (split every: 400 MB)
+7955.694 (0) Total entities for the zip file: 6 directories, 174 files (0 skipped as non-modified), 47.3 MB
+7955.739 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+7956.037 (0) backup_2025-10-07-0542_Project3_a0c73e168833-uploads.zip.tmp: size is now: 47.30 MB
+7956.272 (0) The time we have been running (7956.2) is approaching the resumption interval (7985) - increasing resumption interval to 7987
+7956.346 (0) Creating zip file manifest (backup_2025-10-07-0542_Project3_a0c73e168833-uploads.zip.list-temp.tmp)
+7956.382 (0) Successfully created zip file manifest (size: 10770)
+7956.828 (0) Created uploads zip (0) - 48425.9 KB in 1.2 s (41949 KB/s) (sha1: efe77b1c507dbe6b0b3e5e16aa6f46e591d574e6, sha256: 4c0e3a9af94732319d75b3d79920c7cb32812810ac8284acbc6d4579d91de03a)
+7956.933 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+7956.965 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-830ef8fb558772fc7e742369f9d70740)
+7957.606 (0) Google Drive: quota usage: used=4254.5 MB, total=15360 MB, available=11105.5 MB
+7957.733 (0) Google Drive: backup_2025-10-07-0542_Project3_a0c73e168833-uploads.zip: Attempting to upload to Google Drive (into folder id: 1iJCRhm49Ok5KBdv_weaN5xjubSdqBbyk)
+7959.449 (0) The time we have been running (7959.3) is approaching the resumption interval (7987) - increasing resumption interval to 7990
+7959.528 (0) Googledrive chunked upload: 2.1 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 4.7 / 12)
+7960.681 (0) The time we have been running (7960.6) is approaching the resumption interval (7990) - increasing resumption interval to 7991
+7960.754 (0) Googledrive chunked upload: 6.3 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 4.7 / 12)
+7961.930 (1) Opened log file at time: Tue, 07 Oct 2025 07:55:14 +0000 on http://localhost:10141
+7962.038 (1) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.8 WP: 6.8.2 PHP: 8.2.27 (fpm-fcgi, Darwin Mac 24.6.0 Darwin Kernel Version 24.6.0: Mon Jul 14 11:29:54 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T8122 arm64) MySQL: 8.0.43-34 (max packet size=104857600) WPLANG: en_US Server: nginx/1.26.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 4.6M | 8M) multisite: N openssl: OpenSSL 3.4.1 11 Feb 2025 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+7962.069 (1) Free space on disk containing Updraft's temporary directory: 140035.4 MB
+7962.102 (1) Requesting backup semaphore lock (udp_backupjob_a0c73e168833)
+7962.231 (1) [Debug] Lock option (updraft_lock_udp_backupjob_a0c73e168833, wp_options) was created in the database
+7962.263 (1) [Info] Lock (updraft_lock_udp_backupjob_a0c73e168833, wp_options) acquired after initialising the database
+7962.455 (1) Terminate: check-in exists with activity within the last 30 seconds (time_mod=1759823714.3, time_now=1759823714.6, diff=0, size=n/a). This likely means that another UpdraftPlus run is at work; so we will exit.
+7962.496 (1) Rescheduling resumption 2: moving to 600 seconds from now (1759824315)
+7962.600 (1) To decrease the likelihood of overlaps, increasing resumption interval to: 7991 + 120 = 8111
+7969.154 (0) The time we have been running (7969) is approaching the resumption interval (7991) - increasing resumption interval to 8000
+7969.316 (0) Googledrive chunked upload: 14.8 % uploaded (7340032)
+7972.136 (0) The time we have been running (7972) is approaching the resumption interval (8000) - increasing resumption interval to 8003
+7972.211 (0) Googledrive chunked upload: 23.3 % uploaded (11534336)
+7977.605 (0) The time we have been running (7977.5) is approaching the resumption interval (8003) - increasing resumption interval to 8008
+7977.679 (0) Googledrive chunked upload: 31.7 % uploaded (15728640)
+7987.472 (0) The time we have been running (7987.4) is approaching the resumption interval (8008) - increasing resumption interval to 8018
+7987.545 (0) Googledrive chunked upload: 40.2 % uploaded (19922944)
+7991.960 (0) The time we have been running (7991.9) is approaching the resumption interval (8018) - increasing resumption interval to 8022
+7992.029 (0) Googledrive chunked upload: 48.6 % uploaded (24117248)
+7994.612 (0) The time we have been running (7994.5) is approaching the resumption interval (8022) - increasing resumption interval to 8025
+7994.684 (0) Googledrive chunked upload: 57.1 % uploaded (28311552 - increasing chunk size to 8192 KB - memory usage: 4.7 / 12)
+8004.945 (0) The time we have been running (8004.8) is approaching the resumption interval (8025) - increasing resumption interval to 8035
+8005.019 (0) Googledrive chunked upload: 74 % uploaded (36700160)
+8018.266 (0) The time we have been running (8018.2) is approaching the resumption interval (8035) - increasing resumption interval to 8049
+8018.338 (0) Googledrive chunked upload: 90.9 % uploaded (45088768)
+8021.942 (0) The time we have been running (8021.8) is approaching the resumption interval (8049) - increasing resumption interval to 8052
+8022.008 (0) Googledrive chunked upload: 100 % uploaded (45088768)
+8022.114 (0) Google Drive: OK: Archive backup_2025-10-07-0542_Project3_a0c73e168833-uploads.zip uploaded in 64.35 seconds
+8022.176 (0) Recording as successfully uploaded: backup_2025-10-07-0542_Project3_a0c73e168833-uploads.zip
+8022.247 (0) Deleting local file: backup_2025-10-07-0542_Project3_a0c73e168833-uploads.zip: OK
+8022.354 (0) Beginning creation of dump of mu-plugins (split every: 400 MB)
+8022.426 (0) Total entities for the zip file: 1 directories, 1 files (0 skipped as non-modified), 0 MB
+8022.481 (0) backup_2025-10-07-0542_Project3_a0c73e168833-mu-plugins.zip.tmp: size is now: 0.00 MB
+8022.614 (0) The time we have been running (8022.5) is approaching the resumption interval (8052) - increasing resumption interval to 8053
+8022.685 (0) Creating zip file manifest (backup_2025-10-07-0542_Project3_a0c73e168833-mu-plugins.zip.list-temp.tmp)
+8022.716 (0) Successfully created zip file manifest (size: 75)
+8022.859 (0) Created mu-plugins zip (0) - 0.6 KB in 0.4 s (1.3 KB/s) (sha1: da3f6333e33e94fed5be9c11af4ff5ea924f679a, sha256: 29f7994d3ee938bb94241eb2cdb21d76e8b752db8fe83298dcf74eaa40f7612f)
+8022.963 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+8022.996 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-830ef8fb558772fc7e742369f9d70740)
+8023.559 (0) Google Drive: quota usage: used=4302.1 MB, total=15360 MB, available=11057.9 MB
+8023.596 (0) Google Drive: backup_2025-10-07-0542_Project3_a0c73e168833-mu-plugins.zip: Attempting to upload to Google Drive (into folder id: 1iJCRhm49Ok5KBdv_weaN5xjubSdqBbyk)
+8026.110 (0) The time we have been running (8026) is approaching the resumption interval (8053) - increasing resumption interval to 8056
+8026.179 (0) Googledrive chunked upload: 100 % uploaded
+8026.284 (0) Google Drive: OK: Archive backup_2025-10-07-0542_Project3_a0c73e168833-mu-plugins.zip uploaded in 2.66 seconds
+8026.345 (0) Recording as successfully uploaded: backup_2025-10-07-0542_Project3_a0c73e168833-mu-plugins.zip
+8026.414 (0) Deleting local file: backup_2025-10-07-0542_Project3_a0c73e168833-mu-plugins.zip: OK
+8026.524 (0) Beginning backup of other directories found in the content directory (index: 0)
+8026.555 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+8026.586 (0) Looking for candidates to backup in: /Users/polinabarannyk/Local Sites/project3/app/public/wp-content
+8026.621 (0) finding files: upgrade: skipping: excluded by options
+8026.652 (0) finding files: .DS_Store: adding to list (1)
+8026.686 (0) finding files: index.php: adding to list (2)
+8026.722 (0) finding files: upgrade-temp-backup: adding to list (3)
+8026.754 (0) finding files: plugins: skipping: this is the plugins directory
+8026.789 (0) finding files: uploads: skipping: this is the uploads directory
+8026.821 (0) finding files: updraft: skipping: this is the updraft directory
+8026.859 (0) finding files: languages: adding to list (4)
+8026.890 (0) finding files: aiowps_backups: skipping: excluded by options (glob)
+8026.924 (0) finding files: themes: skipping: this is the themes directory
+8026.959 (0) finding files: mu-plugins: skipping: this is the mu-plugins directory
+8027.044 (0) Total entities for the zip file: 2 directories, 143 files (0 skipped as non-modified), 7.2 MB
+8027.085 (0) Zip: backup_2025-10-07-0542_Project3_a0c73e168833-others.zip.tmp: 100 files added (on-disk size: 0 KB)
+8027.329 (0) backup_2025-10-07-0542_Project3_a0c73e168833-others.zip.tmp: size is now: 1.90 MB
+8027.460 (0) The time we have been running (8027.4) is approaching the resumption interval (8056) - increasing resumption interval to 8058
+8027.531 (0) Creating zip file manifest (backup_2025-10-07-0542_Project3_a0c73e168833-others.zip.list-temp.tmp)
+8027.565 (0) Successfully created zip file manifest (size: 8528)
+8027.738 (0) Created others zip (0) - 1905.2 KB in 0.7 s (2676.6 KB/s) (sha1: f991c1070c6388453f1919c050a514b390b0f855, sha256: 471b42ca9ee13cc61cb296a9ea15476fc4c0c37fda9185948646adf4aa9fc05c)
+8027.850 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+8027.884 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-830ef8fb558772fc7e742369f9d70740)
+8028.384 (0) Google Drive: quota usage: used=4302.1 MB, total=15360 MB, available=11057.9 MB
+8028.416 (0) Google Drive: backup_2025-10-07-0542_Project3_a0c73e168833-others.zip: Attempting to upload to Google Drive (into folder id: 1iJCRhm49Ok5KBdv_weaN5xjubSdqBbyk)
+8030.124 (0) The time we have been running (8030) is approaching the resumption interval (8058) - increasing resumption interval to 8061
+8030.201 (0) Googledrive chunked upload: 53.7 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 4.7 / 12)
+8032.043 (0) The time we have been running (8031.9) is approaching the resumption interval (8061) - increasing resumption interval to 8062
+8032.113 (0) Googledrive chunked upload: 100 % uploaded (1048576)
+8032.220 (0) Google Drive: OK: Archive backup_2025-10-07-0542_Project3_a0c73e168833-others.zip uploaded in 3.77 seconds
+8032.279 (0) Recording as successfully uploaded: backup_2025-10-07-0542_Project3_a0c73e168833-others.zip
+8032.349 (0) Deleting local file: backup_2025-10-07-0542_Project3_a0c73e168833-others.zip: OK
+8032.534 (0) Saving backup status to database (elements: 10)
+8032.673 (0) No database backup (wp) - not part of this run
+8032.814 (0) backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+8032.849 (0) backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip: themes: This file has already been successfully uploaded
+8032.884 (0) backup_2025-10-07-0542_Project3_a0c73e168833-uploads.zip: uploads: This file has already been successfully uploaded
+8032.920 (0) backup_2025-10-07-0542_Project3_a0c73e168833-mu-plugins.zip: mu-plugins: This file has already been successfully uploaded
+8032.971 (0) backup_2025-10-07-0542_Project3_a0c73e168833-others.zip: others: This file has already been successfully uploaded
+8033.024 (0) Saving backup history. Total backup size: 78.4 MB
+8033.172 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+8033.279 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+8033.304 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-830ef8fb558772fc7e742369f9d70740)
+8033.899 (0) Google Drive: quota usage: used=4302.1 MB, total=15360 MB, available=11057.9 MB
+8033.938 (0) Google Drive: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip: Attempting to upload to Google Drive (into folder id: 1iJCRhm49Ok5KBdv_weaN5xjubSdqBbyk)
+8035.718 (0) The time we have been running (8035.5) is approaching the resumption interval (8062) - increasing resumption interval to 8066
+8035.829 (0) Googledrive chunked upload: 6 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 4.7 / 12)
+8036.900 (0) The time we have been running (8036.8) is approaching the resumption interval (8066) - increasing resumption interval to 8067
+8036.973 (0) Googledrive chunked upload: 18.1 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 4.7 / 12)
+8038.232 (0) The time we have been running (8038.1) is approaching the resumption interval (8067) - increasing resumption interval to 8069
+8038.303 (0) Googledrive chunked upload: 42.1 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 4.7 / 12)
+8047.618 (0) The time we have been running (8047.5) is approaching the resumption interval (8069) - increasing resumption interval to 8078
+8047.688 (0) Googledrive chunked upload: 90.3 % uploaded (15728640)
+8049.745 (0) The time we have been running (8049.6) is approaching the resumption interval (8078) - increasing resumption interval to 8080
+8049.815 (0) Googledrive chunked upload: 100 % uploaded (15728640)
+8049.924 (0) Google Drive: OK: Archive backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip uploaded in 15.95 seconds
+8049.986 (0) Recording as successfully uploaded: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip
+8050.055 (0) Deleting local file: backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip: OK
+8050.149 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=5, retain_db=10
+8050.214 (0) Number of backup sets in history: 3; groups (db): 1
+8050.245 (0) Examining (for databases) backup set with group_id=0, nonce=df8dbdc7c0d0, datestamp=1759822095 (Oct 07 2025 07:28:15)
+8050.276 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+8050.309 (0) Examining (for databases) backup set with group_id=0, nonce=a0c73e168833, datestamp=1759815752 (Oct 07 2025 05:42:32)
+8050.309 (0) Examining (for databases) backup set with group_id=0, nonce=a7fcae9bd5a7, datestamp=1759771806 (Oct 06 2025 17:30:06)
+8050.309 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+8050.341 (0) Number of backup sets in history: 3; groups (files): 1
+8050.375 (0) Examining (for files) backup set with nonce=df8dbdc7c0d0, datestamp=1759822095 (Oct 07 2025 07:28:15)
+8050.375 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+8050.409 (0) Examining (for files) backup set with nonce=a0c73e168833, datestamp=1759815752 (Oct 07 2025 05:42:32)
+8050.409 (0) This backup set is the backup set just made, so will not be deleted.
+8050.443 (0) This backup set is the backup set just made, so will not be deleted.
+8050.444 (0) This backup set is the backup set just made, so will not be deleted.
+8050.444 (0) This backup set is the backup set just made, so will not be deleted.
+8050.444 (0) This backup set is the backup set just made, so will not be deleted.
+8050.444 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+8050.476 (0) Examining (for files) backup set with nonce=a7fcae9bd5a7, datestamp=1759771806 (Oct 06 2025 17:30:06)
+8050.476 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+8050.511 (0) Retain: saving new backup history (sets now: 3) and finishing retain operation
+8050.649 (0) Resume backup (a0c73e168833, 0): finish run
+8050.746 (0) Decremented the semaphore (f) by 1
+8050.811 (0) Semaphore (f) unlocked
+8050.847 (0) There were errors in the uploads, so the 'resume' event is remaining scheduled
+8050.919 (0) No email will/can be sent - the user has not configured an email address.
+8050.951 (0) The backup has not finished; a resumption is scheduled
+8569.070 (2) Opened log file at time: Tue, 07 Oct 2025 08:05:21 +0000 on http://localhost:10141
+8569.227 (2) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.8 WP: 6.8.2 PHP: 8.2.27 (fpm-fcgi, Darwin Mac 24.6.0 Darwin Kernel Version 24.6.0: Mon Jul 14 11:29:54 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T8122 arm64) MySQL: 8.0.43-34 (max packet size=104857600) WPLANG: en_US Server: nginx/1.26.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 4.5M | 6M) multisite: N openssl: OpenSSL 3.4.1 11 Feb 2025 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+8569.281 (2) Free space on disk containing Updraft's temporary directory: 139637.5 MB
+8569.334 (2) Requesting backup semaphore lock (udp_backupjob_a0c73e168833)
+8569.437 (2) [Info] Lock (updraft_lock_udp_backupjob_a0c73e168833, wp_options) acquired
+8569.545 (2) Backup run: resumption=2, nonce=a0c73e168833, file_nonce=a0c73e168833 begun at=1759815752 (8570s ago), job type=backup
+8569.648 (2) Scheduling a resumption (3) after 8080 seconds (1759832402) in case this run gets aborted
+8569.752 (2) Checking if we have a zip executable available
+8569.802 (2) Zip engine: found/will use a binary zip: /usr/bin/zip
+8569.833 (2) Creation of backups of directories: already finished
+8569.869 (2) Saving backup status to database (elements: 10)
+8570.018 (2) No database backup (wp) - not part of this run
+8570.153 (2) backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip: plugins: This file has already been successfully uploaded
+8570.186 (2) backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip: themes: This file has already been successfully uploaded
+8570.220 (2) backup_2025-10-07-0542_Project3_a0c73e168833-uploads.zip: uploads: This file has already been successfully uploaded
+8570.253 (2) backup_2025-10-07-0542_Project3_a0c73e168833-mu-plugins.zip: mu-plugins: This file has already been successfully uploaded
+8570.288 (2) backup_2025-10-07-0542_Project3_a0c73e168833-others.zip: others: This file has already been successfully uploaded
+8570.323 (2) Saving backup history. Total backup size: 78.4 MB
+8570.461 (2) Resume backup (a0c73e168833, 2): finish run
+8570.531 (2) There were no more files that needed uploading
+8570.598 (2) [Info] Lock option (updraft_lock_udp_backupjob_a0c73e168833, wp_options) was deleted from the database
+8570.632 (2) There were no errors in the uploads, so the 'resume' event (3) is being unscheduled
+8570.731 (2) Deleting zip manifest (backup_2025-10-07-0542_Project3_a0c73e168833-plugins.zip.list.tmp)
+8570.766 (2) Deleting zip manifest (backup_2025-10-07-0542_Project3_a0c73e168833-themes.zip.list.tmp)
+8570.798 (2) Deleting zip manifest (backup_2025-10-07-0542_Project3_a0c73e168833-uploads.zip.list.tmp)
+8570.834 (2) Deleting zip manifest (backup_2025-10-07-0542_Project3_a0c73e168833-mu-plugins.zip.list.tmp)
+8570.868 (2) Deleting zip manifest (backup_2025-10-07-0542_Project3_a0c73e168833-others.zip.list.tmp)
+8570.905 (2) No email will be sent - this backup set was empty.
+8570.940 (2) The backup succeeded and is now complete
