@@ -646,3 +646,79 @@ html {
 
 
 
+
+/* single-page */
+
+body {
+  background: #8e2b2b;
+  }
+  
+  .sp {
+  min-height: 100vh;
+  padding: 16px;
+  }
+  
+  .sp-hero {
+  max-width: 1120px;
+  margin: 0 auto;
+  background: #8e2b2b;
+  padding: 20px;
+  border-radius: 18px;
+  }
+  
+  .sp-hero__img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+  
+  .sp-card {
+  position: relative;
+  margin: -64px 18px 18px;
+  background: #8e2b2b;
+  border-radius: 18px;
+  padding: 20px 22px;
+  color: #FFF8D8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+  
+  .sp-title {
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.25;
+  color: #FFF8D8;
+  }
+  
+  .sp-text p {
+  margin: 0 0 0.8em;
+  }
+  
+  .sp-text ul {
+  margin: 0.2em 0 0.8em 1.2em;
+  }
+  
+  .sp-text li {
+  margin: 0.2em 0;
+  }
+  
+  @media (max-width: 900px) {
+  .sp-hero {
+  padding: 14px;
+  }
+  
+  .sp-hero__img {
+  height: 240px;
+  }
+  
+  .sp-card {
+  margin: -44px 10px 12px;
+  padding: 16px;
+  }
+  }
+  
+  
+  
+  
